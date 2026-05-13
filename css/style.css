@@ -122,6 +122,10 @@ ul { list-style: none; }
 }
 .nav-links a:hover { color: var(--c-gold-light); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active {
+  color: var(--c-gold-light);
+}
+.nav-links a.active::after { width: 100%; }
 
 .btn-nav {
   font-family: var(--font-ui);
