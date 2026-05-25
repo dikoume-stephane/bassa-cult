@@ -398,7 +398,7 @@ ul { list-style: none; }
 /* Disposition finale en losange 2×2 */
 .hex-grid {
   grid-template-columns: var(--hex-size) var(--hex-size);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   align-items: start;
 }
 /* Colonne droite décalée vers le bas */
@@ -413,6 +413,7 @@ ul { list-style: none; }
   margin-top: calc(var(--hex-size) * 0.577);
 }
 .hex-item--top-left { grid-column: 1; grid-row: 1; }
+.hex-item--top-left2 { grid-column: 1; grid-row: 3; }
 .hex-item--bot-left  { grid-column: 1; grid-row: 2; }
 
 /* Clip hexagonal */
@@ -574,6 +575,7 @@ ul { list-style: none; }
 .news-card:hover {
   border-color: rgba(201,168,76,0.35);
   transform: translateY(-4px);
+  box-shadow: 0 2px 55px rgba(201,168,76,0.35);
 }
 
 .news-card-img {
