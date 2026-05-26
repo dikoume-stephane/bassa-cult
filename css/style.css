@@ -692,58 +692,6 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PROVERBE
-═══════════════════════════════════════════════════════════════ */
-.proverb-section {
-  padding: 6rem 2rem;
-  background: var(--c-bg);
-  text-align: center;
-  position: relative;
-}
-.proverb-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--c-gold), transparent);
-}
-.proverb-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--c-gold), transparent);
-}
-
-.proverb-inner {
-  max-width: 700px;
-  margin: 0 auto;
-}
-.proverb-deco {
-  color: var(--c-gold);
-  font-size: 1.5rem;
-  display: block;
-  margin-bottom: 1.5rem;
-  opacity: 0.6;
-}
-.proverb-text {
-  font-family: var(--font-body);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-style: italic;
-  font-weight: 300;
-  color: var(--c-cream);
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-.proverb-translation {
-  font-family: var(--font-ui);
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-  color: var(--c-text-dim);
-}
-.proverb-translation em { color: var(--c-gold); font-style: normal; }
-
-/* ═══════════════════════════════════════════════════════════════
    ACTUALITÉS
 ═══════════════════════════════════════════════════════════════ */
 .news-section {
