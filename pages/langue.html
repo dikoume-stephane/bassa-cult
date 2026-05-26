@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet" />
+  <script src="../js/theme.js" defer></script>
 </head>
 <body>
 
@@ -25,15 +26,39 @@
       <li><a href="Gastronomie.html"> Gastronomie</a></li>
       <li><a href="langue.html" class="active">Langue & Littérature</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="#explorer" class="btn-nav">Explorer</a>
+    <div class="theme-toggle-wrapper">
+      <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+      <label for="theme-toggle" class="theme-toggle-label">
+        <span class="toggle-icon icon-moon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </span>
+
+        <span class="toggle-icon icon-sun">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </span>
+        
+        <div class="glass-bubble"></div>
+      </label>
     </div>
+    
   </nav>
 
   <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
   <header class="hero" id="accueil">
   
-    <div class="hero-bg" style="background-image: url('../assets/images/Alphabet_bassa.gif');"></div>
+    <div class="hero-bg" style="background-image: url('../assets/images/');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
 
@@ -96,77 +121,7 @@
       <span>Site dédié à perpétuer la grandeur du patrimoine bassa</span>
     </div>
   </footer>
-<footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-col footer-brand">
-        <div class="footer-logo">
-          <span class="logo-symbol">✦</span>
-          <span class="logo-text">MBOG</span>
-        </div>
-        <p>Le portail culturel du peuple Bassa du Cameroun.</p>
-      </div>
 
-      <div class="footer-col">
-        <h4>Explorer</h4>
-        <ul>
-          <li><a href="histoire.html">Origines</a></li>
-          <li><a href="societe.html">Société &amp; Traditions</a></li>
-          <li><a href="art.html">Art</a></li>
-          <li><a href="Gastronomie.html">Gastronomie</a></li>
-          <li><a href="langue.html">Langue &amp; Littérature</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Culture</h4>
-        <ul>
-          <li><a href="#">Le Mbog</a></li>
-          <li><a href="#">Ngog Lituba</a></li>
-          <li><a href="#">Danse Assiko</a></li>
-          <li><a href="#">Proverbes Bassa</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#">Contribuer</a></li>
-          <li><a href="#">Nous écrire</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2025 Mbog – Peuple Bassa. Tous droits réservés.</span>
-      <span>Site dédié à perpétuer la grandeur du patrimoine bassa</span>
-    </div>
-  </footer>
-
-  <script>
-    // ── Navbar scroll effect ──────────────────────────────────
-    const nav = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // ── Reveal on scroll ─────────────────────────────────────
-    const revealEls = document.querySelectorAll(
-      '.intro-inner, .hex-item, .news-card, .proverb-inner, .mission-inner'
-    );
-    revealEls.forEach(el => el.classList.add('reveal'));
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          // Légère animation en cascade pour les éléments groupés
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  <script src="../js/main.js" defer></script>
 </body>
 </html>

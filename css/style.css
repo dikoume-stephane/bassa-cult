@@ -112,20 +112,198 @@ ul { list-style: none; }
   transition: color var(--transition);
   position: relative;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR : PROJECTEUR EN HAUT + LIGNE EN BAS
+═══════════════════════════════════════════════════════════════ */
+
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-text);
+  transition: color var(--transition);
+  position: relative;
+  display: inline-block;
+}
+
+/* 1. LE PROJECTEUR (Fusion de la barre source et du faisceau) */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -12px; /* Positionné au-dessus du texte */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;  /* Largeur de la base du cône */
+  height: 40px; /* Hauteur du faisceau */
+  
+  /* Le faisceau de lumière transparent qui descend */
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.25), transparent);
+  
+  /* Découpe en trapèze pour la forme du cône */
+  clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+  
+  /* La petite barre lumineuse intense est injectée directement sur l'arête supérieure */
+  border-top: 3px solid var(--c-gold-light);
+  
+  /* Caché par défaut */
+  opacity: 0;
+  transition: opacity var(--transition), filter var(--transition);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 2. LA LIGNE TRADITIONNELLE EN BAS (Votre code d'origine restauré) */
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -3px; left: 0;
-  width: 0; height: 1px;
+  bottom: -3px; 
+  left: 0;
+  width: 0; 
+  height: 1px;
   background: var(--c-gold);
   transition: width var(--transition);
 }
-.nav-links a:hover { color: var(--c-gold-light); }
-.nav-links a:hover::after { width: 100%; }
+
+/* ═══════════════════════════════════════════════════════════════
+   COMPORTEMENT AU SURVOL (HOVER) ET ÉTAT ACTIVE
+═══════════════════════════════════════════════════════════════ */
+
+.nav-links a:hover { 
+  color: var(--c-gold-light); 
+}
+
+/* Allumage du projecteur en haut */
+.nav-links a:hover::before,
+.nav-links a.active::before {
+  opacity: 1;
+  /* Effet néon diffus autour de la barre du haut */
+  filter: drop-shadow(0 0 4px var(--c-gold-light)); 
+}
+
+/* Dessin de la ligne en bas */
+.nav-links a:hover::after,
+.nav-links a.active::after { 
+  width: 100%; 
+}
+
+/* Couleur du texte pour la page active */
 .nav-links a.active {
   color: var(--c-gold-light);
 }
-.nav-links a.active::after { width: 100%; }
+
+/* ═══════════════════════════════════════════════════════════════
+   STRUCTURE DU GLASS TOGGLE
+═══════════════════════════════════════════════════════════════ */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Cache la case à cocher native */
+.theme-checkbox {
+  display: none;
+}
+
+/* Le conteneur (la pilule) */
+.theme-toggle-label {
+  width: 75px;
+  height: 34px;
+  background: rgba(23, 20, 16, 0.23); /* Fond sombre translucide */
+  border: 1px solid rgba(214, 175, 55, 0.2); /* Fine bordure dorée */
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition);
+}
+
+/* Les icônes */
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform var(--transition);
+}
+
+/* Taille et couleur de base des icônes */
+.toggle-icon svg {
+  width: 14px;
+  height: 14px;
+  /* Par défaut, elles prennent la couleur du texte mais légèrement atténuées */
+  stroke: var(--c-text);
+  opacity: 0.4;
+  transition: stroke var(--transition), opacity var(--transition), filter var(--transition);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   EFFET D'ILLUMINATION (DYNAMIQUE)
+═══════════════════════════════════════════════════════════════ */
+
+/* 1. Quand le mode DARK est actif (case décochée) : La lune s'illumine en or */
+.theme-checkbox:not(:checked) + .theme-toggle-label .icon-moon svg {
+  stroke: var(--c-gold-light);
+  opacity: 1;
+  filter: drop-shadow(0 0 4px var(--c-gold));
+}
+
+/* 2. Quand le mode LIGHT est actif (case cochée) : Le soleil s'illumine */
+.theme-checkbox:checked + .theme-toggle-label .icon-sun svg {
+  stroke: var(--c-gold);
+  opacity: 1;
+  filter: drop-shadow(0 0 4px var(--c-gold));
+}
+
+/* La bulle de verre coulissante (Glassmorphism) */
+.glass-bubble {
+  position: absolute;
+  top: -7px;
+  left: 1px;
+  width: 28px;
+  height: 46px;
+  border-radius: 50px;
+  
+  /* L'effet de verre dépoli */
+  background: rgba(128, 127, 127, 0.06);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  
+  /* Ombres et reflets du verre */
+  border: 1px solid rgba(255, 255, 255, 0.153);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.127);
+              
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATION ET COMPORTEMENT DES THÈMES
+═══════════════════════════════════════════════════════════════ */
+
+/* Quand la case est cochée (Mode Light provoqué par l'utilisateur) */
+.theme-checkbox:checked + .theme-toggle-label .glass-bubble {
+  transform: translateX(43px); /* Fait glisser la bulle sur le soleil */
+}
+
+/* --- Adaptations au Thème Light Global (quand html[data-theme="light"]) --- */
+[data-theme="light"] .theme-toggle-label {
+  background: rgba(227, 212, 190, 0.307); /* Fond sable clair */
+  border: 1px solid rgba(140, 97, 11, 0.174); /* Bordure bronze */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .glass-bubble {
+  background: rgba(255, 255, 255, 0.136); /* Verre plus blanc et visible sur fond clair */
+  border: 1px solid rgba(255, 255, 255, 0.238);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .btn-nav {
   font-family: var(--font-ui);
@@ -372,6 +550,7 @@ ul { list-style: none; }
   Disposition :
     [1] [2]
     [3] [4]
+    [5]
   avec la rangée du bas décalée de hex-size/2
 */
 .hex-item {
@@ -380,9 +559,13 @@ ul { list-style: none; }
   width: var(--hex-size);
   height: calc(var(--hex-size) * 1.1547); /* rapport hexagone régulier */
   cursor: pointer;
-  transition: transform var(--transition);
+  transition: transform var(--transition), filter var(--transition);
 }
-.hex-item:hover { transform: translateY(-8px) scale(1.03); }
+.hex-item:hover { 
+  transform: translateY(-8px) scale(1.03);
+/* MODIFICATION : Ajout du halo lumineux doré autour de l'hexagone */
+  filter: drop-shadow(0 0 15px var(--c-gold));
+}
 
 /* Décalage horizontal de la 2e colonne pour créer l'imbrication */
 .hex-item--top-right,
@@ -487,6 +670,26 @@ ul { list-style: none; }
   margin-top: 0.3rem;
 }
 .hex-item:hover .hex-cta { opacity: 1; transform: translateY(0); }
+/* ═══════════════════════════════════════════════════════════════
+   EFFET BORDURE LUMINEUSE (AJOUT)
+═══════════════════════════════════════════════════════════════ */
+
+/* 1. On prépare l'image et le voile à être réduits proprement */
+.hex-img, .hex-veil {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  transition: clip-path var(--transition), transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 2. Au survol de l'item, le fond du conteneur devient or */
+.hex-item:hover .hex-clip {
+  background: var(--c-gold);
+}
+
+/* 3. Au survol, on crée un léger retrait (98%) pour laisser passer le fond d'or */
+.hex-item:hover .hex-img,
+.hex-item:hover .hex-veil {
+  clip-path: polygon(50% 1.5%, 98.5% 25.5%, 98.5% 74.5%, 50% 98.5%, 1.5% 74.5%, 1.5% 25.5%);
+}
 
 /* ═══════════════════════════════════════════════════════════════
    PROVERBE
