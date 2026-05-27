@@ -17,7 +17,8 @@
   --c-text:       #d4c9b0;
   --c-text-dim:   #7a6e5a;
   --c-white:      #ffffff;
-
+  --c-Nbgs:       rgba(14,12,9,0.97);
+  --c-Nbg: linear-gradient(to bottom, rgba(14,12,9,0.92) 0%, rgba(14,12,9,0) 100%);
   --font-display: 'Cinzel', serif;
   --font-body:    'Cormorant Garamond', serif;
   --font-ui:      'Barlow Condensed', sans-serif;
@@ -27,6 +28,32 @@
 
   --nav-h: 72px;
   --transition: 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* --- AJOUT : Image Hero par défaut (Forêt - Mode Sombre) --- */
+  --bg-hero-image: url('../assets/images/hero-forest.jpg');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   THÈME LIGHT 
+═══════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+  /* Fonds (Ivoire / Argile claire / Sable) */
+  --c-bg:         #FAF6F0; 
+  --c-surface:    #EFEAE0;
+  --c-surface2:   #E4DCD0;
+  --c-Nbgs:       rgba(217, 206, 189, 0.97);
+  --c-Nbg: linear-gradient(to bottom, rgba(207, 187, 159, 0.92) 0%, rgba(216, 194, 161, 0) 100%);
+
+  /* Or et Accents (Assombris pour garantir un excellent contraste sur fond clair) */
+  --c-gold:       #8C620B;
+  --c-gold-light: #A67C1E;
+
+  /* Textes et Titres (Inversion pour lisibilité sur fond clair) */
+  --c-cream:      #edb356; /* Devient Ébène clair pour les grands titres */
+  --c-text:       #2A241C; /* Texte principal sombre et doux */
+  --c-text-dim:   #615645; /* Texte secondaire légèrement atténué */
+
+  --bg-hero-image: url('../assets/images/hero-sanaga.jpg');
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,12 +100,12 @@ ul { list-style: none; }
   justify-content: space-between;
   padding: 0 3rem;
   z-index: 100;
-  background: linear-gradient(to bottom, rgba(14,12,9,0.92) 0%, rgba(14,12,9,0) 100%);
+  background: var(--c-Nbg);
   backdrop-filter: blur(0px);
   transition: background var(--transition), backdrop-filter var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(14,12,9,0.97);
+  background: var(--c-Nbgs);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201,168,76,0.15);
 }
@@ -466,19 +493,6 @@ ul { list-style: none; }
   height: 80px;
   background: linear-gradient(to bottom, transparent, var(--c-gold), transparent);
   margin: 0 auto 3rem;
-}
-
-.intro-badge {
-  display: inline-block;
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--c-forest);
-  background: rgba(45,74,47,0.2);
-  border: 1px solid var(--c-forest);
-  padding: 0.3rem 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .intro-heading {
