@@ -66,3 +66,52 @@ body {
     box-shadow: 0 2px 55px rgba(239, 8, 8, 0.652); /* Ajout d'une ombre douce */
     border-color: #ffc107; /* Change la couleur de bordure pour un accent */
 }
+/* ═══════════════════════════════════════════════════════════════
+   LE TRACÉ DU FLEUVE SANAGA
+═══════════════════════════════════════════════════════════════ */
+
+.sanaga-river {
+  position: absolute;
+  top: 4rem;
+  bottom: 4rem;
+  left: 0;
+  width: 100%;
+  /* Le fleuve prend exactement la hauteur totale de la section des migrations */
+  height: calc(100% - 8rem); 
+  pointer-events: none; /* Empêche le SVG de bloquer les clics sur les liens */
+  z-index: 1;
+}
+
+.sanaga-river path {
+  fill: none;
+  stroke: var(--c-gold);
+  stroke-width: 2px; /* Épaisseur du fleuve */
+  opacity: 0.25;
+  
+  /* 🛠️ L'OUTIL MAGIQUE : Empêche la ligne de s'épaissir ou de se déformer 
+     quand le site s'allonge ou rétrécit. Elle reste toujours à 2px nets. */
+  vector-effect: non-scaling-stroke;
+  
+  /* Effet de fondu lors du changement de thème */
+  transition: stroke var(--transition), opacity var(--transition);
+}
+
+/* Adaptation du fleuve pour le mode Light */
+[data-theme="light"] .sanaga-river path {
+  stroke: var(--c-gold-light);
+  opacity: 0.45;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ADAPTATION POUR ANDROID / MOBILE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 968px) {
+  /* Sur mobile, les blocs s'empilent. Si le fleuve ondule trop fort, 
+     il va couper les textes de manière illisible. On réduit donc son ondulation. */
+  .sanaga-river {
+    opacity: 0.12; /* On le rend très discret en arrière-plan spirituel */
+  }
+  
+  /* Optionnel : Si vous préférez le cacher sur petit écran, décommentez la ligne en dessous */
+  /* .sanaga-river { display: none; } */
+}
