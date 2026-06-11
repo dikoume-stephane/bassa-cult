@@ -6,11 +6,14 @@
   <title>Mbog — Le Peuple Bassa</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/histoire.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet" />
   <script src="../js/theme.js" defer></script>
   <script src="../js/sanaga.js" defer></script>
+  <script src="../js/map.js" defer></script>
 </head>
 <body>
 
@@ -80,7 +83,73 @@
   <!-- ═══════════════════════════════ FRESQUE DES MIGRATIONS ═══════════════════════════════ -->
   <main class="history-fresco" id="explorer">
     <div class="river-background"></div>
+    <!-- intro -->
+    <div class="intro-inner">
+      <h2 class="intro-heading">Qui sont les Bassa ?</h2>
+      <p class="intro-text">
+        Le peuple <strong>Bassa</strong> est l'un des plus anciens peuples <em> bantu</em> du Cameroun. Autochtone du pays, il est installé dans la région du Littoral (notamment à <em> Douala</em>) depuis au moins le <em> XVIIIᵉ siècle</em>, bien avant l'arrivée des Portugais sur la côte ouest-africaine. Les Bassa constituent ce qu'on appelle la « vitrine de l'histoire du Cameroun », car leur présence précoce et leur expansion territoriale ont marqué profondément la mémoire collective du pays.
+      </p>
+    </div>
     <!-- Étape 1 : Les Rives du Nil -->
+    <section class="fresco-row">
+      <div class="fresco-media">
+        <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
+        <div class="fresco-img-overlay"></div>
+      </div>
+      <div class="fresco-text">
+        <span class="fresco-date">Époque Antique</span>
+        <h3 class="fresco-subtitle">Origines Lointaines : De l'Égypte Antique à l'Afrique Centrale</h3>
+        <p class="fresco-paragraph">
+          Selon les <em>sources orales vivantes</em>, les origines du peuple Bassa remontent jusqu'à <strong> l'Égypte antique</strong>. Leur migration aurait commencé près du <strong>Nil</strong>, en franchissant les frontières de l'Égypte et du Soudan.Ils ont d'abord occupé la <em>vallée du Logone</em>, passant par <em>Kenem Bornou</em>. Ensuite, ils ont longé le fleuve pour se réfugier à <em>Guelingdeng</em>, avant de s'installer dans les <em>monts Mandara</em>.Finalement, ils ont migré vers l'Afrique centrale, notamment vers les régions de l'actuelle <em>République du Congo</em>, en suivant les grands fleuves et forêts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Étape 2 : La Grande Marche -->
+    <section class="fresco-row">
+      <div class="fresco-media">
+        <img src="../assets/images/migration-marche.jpg" alt="La Grande Marche à travers le continent" class="fresco-img">
+        <div class="fresco-img-overlay"></div>
+      </div>
+      <div class="fresco-text">
+        <span class="fresco-date">Moyen Âge</span>
+        <h3 class="fresco-subtitle">La Grande Migration et la Scission : Apparition des « Babimbi »</h3>
+        <p class="fresco-paragraph">
+          Le temps passa, et le clan Bassa continua sa migration vers le sud. Ils arrivèrent face au fleuve <strong>Sanaga</strong>, qui séparait leur futur de leur passé. En pirogue, ils traversèrent, mais quelque chose d'imprévu se produisit…Au milieu du parcours, certains membres du clan <em>cessèrent de marcher</em>. Ils se reposèrent, se laissèrent aller à la fatigue. Ceux qui sont restés derrière furent appelés <strong>Babimbi</strong>, terme qui signifie littéralement <em>être allongé, étalé, couché</em>.Cette scission, parfois décrite comme une marque d'indolence, donna naissance à deux branches distinctes du peuple Bassa. Mais dans la mémoire collective, c'est aussi un rappel : <em>la migration exige la persévérance</em>. Ceux qui avancent, survivent. Ceux qui restent, deviennent l'histoire.
+        </p>
+      </div>
+    </section>
+
+    <!-- Étape 3 : l'installation -->
+    <section class="fresco-row">
+      <div class="fresco-media">
+        <img src="../assets/images/migration-sanaga.jpg" alt="Le fleuve maritime Sanaga" class="fresco-img">
+        <div class="fresco-img-overlay"></div>
+      </div>
+      <div class="fresco-text">
+        <span class="fresco-date">Installation</span>
+        <h3 class="fresco-subtitle">Installation à Douala et Coexistence avec les Bakoko</h3>
+        <p class="fresco-paragraph">
+          Après des siècles de desplazement, les Bassa retrouvèrent leur terre d'ancrage : <strong>Douala</strong>, autrefois appelée <strong>Monashambeach</strong>. Là, ils s'installèrent en compagnie de leurs frères <em>Bakoko</em>, les premiers à occuper cette terre fertile.Ils ne furent pas des envahisseurs, mais des <em>retourneurs</em>. Ils savaient que cette terre était la leur, qu'ils revenaient à leur point de départ, là où tout avait commencé. Leur territoire s'étendit de l'Afrique centrale jusqu'à l'<em>Afrique de l'Ouest</em>, formant plusieurs foyers qui gardent encore aujourd'hui le lien avec la terre bassa.
+        </p>
+      </div>
+    </section>
+
+    <!-- l'encertre commun et l'origine du nom -->
+    <section class="fresco-row">
+      <div class="fresco-media">
+        <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
+        <div class="fresco-img-overlay"></div>
+      </div>
+      <div class="fresco-text">
+        <span class="fresco-date">legende</span>
+        <h3 class="fresco-subtitle">L'Ancêtre Commun : Mban et l'Étymologie du Nom « Bassa »</h3>
+        <p class="fresco-paragraph">
+          Dans la tradition orale bassa, il est un nom que l'on chuchote avec respect : <strong>Mban</strong>. Tous les Bassa se reconnaissent comme <em>les fils de Mban</em>, unis par ce lien sacré qui dépasse les générations.Mais pourquoi « Bassa » ? L'histoire raconte une querelle mémorable. Lors d'un retour de chasse, les fils de Mban se disputèrent le <em>partage d'un serpent</em> qu'ils avaient ramené. Le mot « Nsa » (la rétribution, le partage) devint « Bassa » dans le pluriel, signifiant <em>les ravisseurs</em>.Cette anecdote, loin d'être un simple détail, incarne l'esprit du peuple : un peuple qui se bat pour ce qui lui appartient, qui défend son droit, qui refuse de se laisser dépouiller. Les autres ancêtres tribaux, les <strong>SOGOL</strong>, sont les gardiens des générations suivantes, formant le <em>panthéon bassa</em> que l'on honore encore aujourd'hui.
+        </p>
+      </div>
+    </section>
+
     <section class="fresco-row">
       <div class="fresco-media">
         <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
@@ -95,35 +164,15 @@
       </div>
     </section>
 
-    <!-- Étape 2 : La Grande Marche -->
-    <section class="fresco-row">
-      <div class="fresco-media">
-        <img src="../assets/images/migration-marche.jpg" alt="La Grande Marche à travers le continent" class="fresco-img">
-        <div class="fresco-img-overlay"></div>
-      </div>
-      <div class="fresco-text">
-        <span class="fresco-date">Moyen Âge</span>
-        <h3 class="fresco-subtitle">La Grande Traversée</h3>
-        <p class="fresco-paragraph">
-          Poussés par les grandes mutations géopolitiques du continent, les ancêtres entament un exode séculaire à travers l'Afrique centrale. C'est au cours de cette marche à travers les savanes et les massifs forestiers que la cohésion des clans se forge, et que les peuples frères (Mpoo, Bati) avancent d'un même pas vers leur terre de promesse.
-        </p>
-      </div>
     </section>
 
-    <!-- Étape 3 : Le Berceau de la Sanaga -->
-    <section class="fresco-row">
-      <div class="fresco-media">
-        <img src="../assets/images/migration-sanaga.jpg" alt="Le fleuve maritime Sanaga" class="fresco-img">
-        <div class="fresco-img-overlay"></div>
-      </div>
-      <div class="fresco-text">
-        <span class="fresco-date">Installation</span>
-        <h3 class="fresco-subtitle">Le Berceau de la Sanaga</h3>
-        <p class="fresco-paragraph">
-          L'atteinte de la grande forêt équatoriale et des rives majestueuses du fleuve Sanaga marque la fin de la longue marche. Dans cette nature protectrice et nourricière, le tissu social se sédentarise définitivement, donnant naissance aux grandes lignées architecturales de la pensée Bassa, couronnées plus tard par la sacralisation de Ngog Lituba.
-        </p>
-      </div>
+
+    <!-- carte -->
+    <section class="section-carte">
+      <h1>Le Territoire Historique des Bassa</h1>
+      <div id="map-bassa"></div>
     </section>
+
   </main>
 
   <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->

@@ -128,57 +128,8 @@
   gap: 14rem; /* Espace dramatique et aéré entre chaque grand siècle */
   transition: background-color var(--transition), color var(--transition);
 }
-
-/* ═══════════════════════════════════════════════════════════════
-   LE TRACÉ DU FLEUVE SANAGA
-═══════════════════════════════════════════════════════════════ */
-
-.sanaga-river {
-  position: absolute;
-  top: 4rem;
-  bottom: 4rem;
-  left: 0;
-  width: 100%;
-  /* Le fleuve prend exactement la hauteur totale de la section des migrations */
-  height: calc(100% - 8rem); 
-  pointer-events: none; /* Empêche le SVG de bloquer les clics sur les liens */
-  z-index: 1;
-}
-
-.sanaga-river path {
-  fill: none;
-  stroke: var(--c-gold);
-  stroke-width: 2px; /* Épaisseur du fleuve */
-  opacity: 0.25;
-  
-  /* 🛠️ L'OUTIL MAGIQUE : Empêche la ligne de s'épaissir ou de se déformer 
-     quand le site s'allonge ou rétrécit. Elle reste toujours à 2px nets. */
-  vector-effect: non-scaling-stroke;
-  
-  /* Effet de fondu lors du changement de thème */
-  transition: stroke var(--transition), opacity var(--transition);
-}
-
-/* Adaptation du fleuve pour le mode Light */
-[data-theme="light"] .sanaga-river path {
-  stroke: var(--c-gold-light);
-  opacity: 0.45;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   ADAPTATION POUR ANDROID / MOBILE
-═══════════════════════════════════════════════════════════════ */
-@media (max-width: 968px) {
-  /* Sur mobile, les blocs s'empilent. Si le fleuve ondule trop fort, 
-     il va couper les textes de manière illisible. On réduit donc son ondulation. */
-  .sanaga-river {
-    opacity: 0.12; /* On le rend très discret en arrière-plan spirituel */
-  }
-  
-  /* Optionnel : Si vous préférez le cacher sur petit écran, décommentez la ligne en dessous */
-  /* .sanaga-river { display: none; } */
-}
-
+.fresco-paragraph em { color: var(--c-gold-light); font-style: italic; }
+.fresco-paragraph strong { color: var(--c-cream); font-weight: 400; }
 /* Rangée asymétrique */
 .fresco-row {
   display: flex;
@@ -213,10 +164,10 @@
 
 .fresco-subtitle {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-size: clamp(2.2rem, 2.5vw, 3.5rem);
   color: var(--c-cream);
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   transition: color var(--transition);
 }
 
@@ -345,3 +296,16 @@ html.is-scrolling .river-background {
   opacity: 0.12;
 }
 
+.section-carte {
+  text-align: center;
+}
+
+#map-bassa {
+  width: 100%;
+  height: 500px; /* Aligne cette hauteur selon ton design */
+  border-radius: 8px; /* Optionnel : pour adoucir les angles */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 20px auto;
+  max-width: 1000px;
+  z-index: 1; /* Évite que la carte passe par-dessus d'autres éléments fixes */
+}
