@@ -118,7 +118,7 @@
 
 .history-fresco {
   position: relative;
-  background-color: var(--c-bg);
+  background-color: var(--c-surface2);
   color: var(--c-text);
   padding: 10rem 2rem;
   max-width: 1400px;

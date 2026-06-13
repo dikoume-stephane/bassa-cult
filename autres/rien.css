@@ -115,3 +115,8 @@ body {
   /* Optionnel : Si vous préférez le cacher sur petit écran, décommentez la ligne en dessous */
   /* .sanaga-river { display: none; } */
 }
+.icone-soleil {
+    width: 40px; /* Nouvelle largeur */
+    height: 40px; /* Nouvelle hauteur */
+    fill: orange; /* Change la couleur globale si nécessaire */
+}

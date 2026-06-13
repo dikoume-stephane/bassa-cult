@@ -1,0 +1,113 @@
+/* activation des transtion entre pages */
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* on active les transitions automatiques entres les pages HTML  */
+    @view-transition {
+        navigation: auto;
+    }
+
+    /* on isole le comtenu qu'on doit animer, ici, le main de chaque  pages  */
+    main {
+        view-transition-name: main-content;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    /* definition des mouvements */
+    @keyframes push-to-left {
+        from { transform: translateX(0);}
+        to { transform: translateX(-100%);}
+    }
+
+    @keyframes push-from-right {
+        from { transform: translateX(100%);}
+        to { transform: translateX(0);}
+    }
+
+    /* application des animations  */
+
+    ::view-transition-group(main-content) {
+        animation-duration: 1.2s;
+        animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* anciene page  */
+    ::view-transition-old(main-content) {
+        animation-name: push-to-left;
+        mix-blend-mode: normal;
+        height: 100%;
+    }
+
+    /* nouvelle page  */
+    ::view-transition-new(main-content) {
+        animation-name: push-from-right;
+        mix-blend-mode: normal;
+        height: 100%;
+    }
+}
+
+/* pour le botton explorer  */
+@media (prefers-reduced-motion: no-preference) {
+    /* on momme la transition du boutton */
+    .btn-nav {
+        view-transition-name: explorer-button;
+    }
+
+    /* animation quand le boutton disparais */
+    ::view-transition-old(explorer-button) {
+        animation: explorer-fade-out 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    /* animation quand le boutton apparais */
+    ::view-transition-new(explorer-button) {
+        animation: explorer-fade-in 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+        animation-duration: 0.8s;
+    }
+}
+
+/* les mouv du bouton */
+@keyframes explorer-fade-out {
+    from {transform: translateX(0); opacity: 1;}
+    to {transform: translateX(40px); opacity: 0;}
+}
+
+@keyframes explorer-fade-in {
+    from {transform: translateX(40px); opacity: 0;}
+    to {transform: translateX(0); opacity: 1;}
+}
+
+
+/* ══════════════ TRANSITION DE LA NAVBAR ═══════════════ */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* 1. On donne un nom unique à CHAQUE morceau (Règle absolue de l'API) */
+  .nav-links {
+    view-transition-name: nav-links-anim;
+  }
+  
+  .theme-toggle-wrapper {
+    view-transition-name: theme-toggle-anim;
+  }
+  
+  .btn-nav {
+    view-transition-name: btn-explorer-anim;
+  }
+
+  /* 2. On synchronise la LENTEUR (1.2s) et le rythme sur les 3 éléments */
+  ::view-transition-group(nav-links-anim),
+  ::view-transition-group(theme-toggle-anim),
+  ::view-transition-group(btn-explorer-anim) {
+    animation-duration: 1.2s; /* Même durée pour tout le monde = synchronisation parfaite */
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Mouvement cinématique */
+  }
+
+  /* 3. On force un rendu net (sans effet fantôme transparent) pendant le mouvement */
+  ::view-transition-old(nav-links-anim), ::view-transition-new(nav-links-anim),
+  ::view-transition-old(theme-toggle-anim), ::view-transition-new(theme-toggle-anim),
+  ::view-transition-old(btn-explorer-anim), ::view-transition-new(btn-explorer-anim) {
+    animation-duration: 1.2s;
+    mix-blend-mode: normal;
+  }
+}

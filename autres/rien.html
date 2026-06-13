@@ -6,7 +6,7 @@
     <title>Exemple Grid Layout 2x3</title>
     <link rel="stylesheet" href="rien.css">
 </head>
-<body>
+<span>
 
     <h1>Ma grille 2 colonnes / 3 lignes</h1>
 
@@ -30,12 +30,37 @@
         <p>Passez votre curseur par-dessus cette boîte pour voir l'effet de surbrillance.</p>
     </div>
     <!-- Le Fleuve Sanaga qui traverse l'histoire -->
-    <svg class="sanaga-river" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <path d="M 50,0 
-               C 65,16 65,16 50,33 
-               C 35,50 35,50 50,66 
-               C 65,83 65,83 50,100" />
+    <span class="icone-soleil">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFC300">
+            <!-- Le cercle central -->
+            <circle cx="12" cy="12" r="5"/>
+
+            <!-- Les rayons (utilisant des chemins pour une forme plus organique) -->
+            <g fill-rule="evenodd">
+                <path d="M4.7 12c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v2c0 1.1-.9 2-2 2H6.7C5.6 14 4.7 13 4.7 12zM12 2a1 1 0 0 0-1 1v18c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z" />
+            </g>
+        </svg>
+
+    </span>   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Le cadre principal (le carré arrondi) -->
+        <rect x="2" y="3" width="20" height="20" rx="4"></rect>
+        <!-- La lettre 'f' stylisée à l'intérieur -->
+        <path d="M15 8v6a2 2 0 0 1-2 2h-4m-3-6l4 4m0 0l-4 4"></path>
     </svg>
-    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="20" rx="4"></rect>
+        <!-- La bulle de discussion (forme principale) -->
+        <path d="M22 16v-.35a2.7 2.7 0 0 0-ꙗ-1.35l-3.3 3.3L19 14.3v-9.8c0-2.42 2-4.3 4.5-4.3h.5m8 6h-3.5c-.5 0-1 .4-1 1v2"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Le conteneur (représente la plateforme professionnelle) -->
+    <path d="M16 3l9 9-9 9"></path>
+    <!-- La ligne de connexion/réseau (le concept clé) -->
+    <path d="M2.5 17v.01"></path>
+</svg>
+
+
+
 </body>
 </html>
