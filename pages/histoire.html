@@ -15,6 +15,7 @@
   <script src="../js/theme.js" defer></script>
   <script src="../js/sanaga.js" defer></script>
   <script src="../js/map.js" defer></script>
+  <script src="../js/grotte.js" defer></script>
 </head>
 <body>
 
@@ -94,7 +95,7 @@
     <!-- Étape 1 : Les Rives du Nil -->
     <section class="fresco-row">
       <div class="fresco-media">
-        <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
+        <img src="../assets/images/migration.png" alt="Berceau de la vallée du Nil" class="fresco-img">
         <div class="fresco-img-overlay"></div>
       </div>
       <div class="fresco-text">
@@ -109,7 +110,7 @@
     <!-- Étape 2 : La Grande Marche -->
     <section class="fresco-row">
       <div class="fresco-media">
-        <img src="../assets/images/migration-marche.jpg" alt="La Grande Marche à travers le continent" class="fresco-img">
+        <img src="../assets/images/traversée.png" alt="La Grande Marche à travers le continent" class="fresco-img">
         <div class="fresco-img-overlay"></div>
       </div>
       <div class="fresco-text">
@@ -124,7 +125,7 @@
     <!-- Étape 3 : l'installation -->
     <section class="fresco-row">
       <div class="fresco-media">
-        <img src="../assets/images/migration-sanaga.jpg" alt="Le fleuve maritime Sanaga" class="fresco-img">
+        <img src="../assets/images/installation.png" alt="Le fleuve maritime Sanaga" class="fresco-img">
         <div class="fresco-img-overlay"></div>
       </div>
       <div class="fresco-text">
@@ -139,7 +140,7 @@
     <!-- l'encertre commun et l'origine du nom -->
     <section class="fresco-row">
       <div class="fresco-media">
-        <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
+        <img src="../assets/images/ancetre.png" alt="Berceau de la vallée du Nil" class="fresco-img">
         <div class="fresco-img-overlay"></div>
       </div>
       <div class="fresco-text">
@@ -151,22 +152,52 @@
       </div>
     </section>
 
-    <section class="fresco-row">
+    <section class="fresco-row ngok-card-container" id="ngok-card">
+      
       <div class="fresco-media">
-        <img src="../assets/images/fest.jpg" alt="Berceau de la vallée du Nil" class="fresco-img">
+        <img src="../assets/images/hex-histoire.jpg" alt="La grotte de Ngok Lituba" class="fresco-img">
         <div class="fresco-img-overlay"></div>
       </div>
+
       <div class="fresco-text">
-        <span class="fresco-date">Époque Antique</span>
-        <h3 class="fresco-subtitle">Les Rives du Nil</h3>
+        <span class="fresco-date">Le Mythe</span>
+        <h3 class="fresco-subtitle">La grotte sacrée de Ngok Lituba</h3>
+        
         <p class="fresco-paragraph">
-          Le voyage mémoriel du peuple Bassa prend racine aux confins de la haute Égypte et de la riche vallée du Nil. Les traditions orales et les récits des initiés évoquent une ère lointaine de savoirs et de splendeur, où les fondements philosophiques et spirituels du Mbog commençaient à s'aligner harmonieusement avec les lois du cosmos.
+          La population locale croit fermement que <strong>Ngok Lituba est le lieu d'origine des peuples africains</strong>. Selon la légende, lors de la course de l'<strong>Égypte ancienne</strong>, les <strong>deux ancêtres</strong> se réfugièrent dans cette grotte pour échapper à leurs ennemis. Là, une <strong>araignée</strong> tissa sa toile à l'entrée, trompant les poursuivants qui passèrent devant en la croyant inhabitée.
         </p>
+
+        <button class="btn-explore-more" id="open-ngok">Lire la suite</button>
+
+        <div class="ngok-full-content">
+          
+          <h4 class="ngok-section-title">Le Rocher Percé</h4>
+          <p class="fresco-paragraph">
+            La grotte est une <strong>ouverture naturelle</strong> d'environ <strong>3 mètres de haut</strong> et <strong>2 mètres de large</strong>, taillée dans un rocher. Entre les <em>Xᵉ et XIIIᵉ siècles</em>, les communautés <strong>Elog-Mpo'O (Bakoko)</strong> et <strong>Bassa</strong> résidèrent à <em>Ngog Lipondo</em> avant de descendre vers les berges du fleuve <em>Wouri</em>, dans la région du Littoral.
+          </p>
+          <p class="fresco-paragraph">
+            Certains géologues pensent que cette formation est le reste d'un <strong>volcan éteint</strong>. D'autres suggèrent qu'il s'agit d'un <strong>cratère météorique érodé</strong> au fil du temps. Mais pour les Bassa, peu importe la science : <strong>c'est le lieu où leurs ancêtres ont trouvé refuge, et c'est là que tout a commencé</strong>.
+          </p>
+
+          <div class="ngok-divider"></div>
+
+          <h4 class="ngok-section-title">Épilogue : Un Patrimoine Vivant à Préserver</h4>
+          <p class="fresco-paragraph">
+            Aujourd'hui, quand vous marchez sur les terres bassa, quand vous entendez leur langue, quand vous voyez leurs rites ancestraux, vous touchez du doigt une <strong>histoire millénaire</strong>. Celle des migrations, des croyances, des mythes fondateurs, et d'un lien profond avec la terre.
+          </p>
+          <p class="fresco-paragraph">
+            La <strong>grotte de Ngok Lituba</strong> reste le <strong>symbole spirituel</strong> de cette origine commune, un lieu de mémoire qui unit de nombreuses communautés d'Afrique centrale.
+          </p>
+          <p class="fresco-paragraph">
+            Si vous lisez ces lignes, c'est que vous faites partie de ceux qui veulent <strong>préserver ce patrimoine</strong>. Vous êtes le gardien de cette mémoire, le passeur de cette histoire. Et c'est ainsi que le peuple Bassa vivra encore, à travers vos mots, vos partages, et votre respect envers les ancêtres.
+          </p>
+
+          <button class="btn-close-ngok" id="close-ngok">Fermer la lecture</button>
+        </div>
       </div>
     </section>
 
-    </section>
-
+    <div class="ngok-backdrop" id="ngok-backdrop"></div>
 
     <!-- carte -->
     <section class="section-carte">

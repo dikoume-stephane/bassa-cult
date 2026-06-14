@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Évite que les paddings déforment tes largeurs */
+}
 
 .hero-bg-h {
   position: absolute;
@@ -121,13 +126,20 @@
   background-color: var(--c-surface2);
   color: var(--c-text);
   padding: 10rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14rem; /* Espace dramatique et aéré entre chaque grand siècle */
+  gap: 10rem; /* Espace dramatique et aéré entre chaque grand siècle */
   transition: background-color var(--transition), color var(--transition);
 }
+
+.fresco-row, 
+.section-carte {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%; 
+}
+
 .fresco-paragraph em { color: var(--c-gold-light); font-style: italic; }
 .fresco-paragraph strong { color: var(--c-cream); font-weight: 400; }
 /* Rangée asymétrique */
@@ -245,6 +257,104 @@
     margin-bottom: 1rem;
   }
 }
+
+
+/*═══════════════ la carte de la grotte ════════════════*/
+.ngok-full-content {
+  display: none; /* Caché au début */
+  margin-top: 2rem;
+}
+.ngok-section-title {
+  font-family: var(--font-display);
+  color: var(--c-gold);
+  margin: 2rem 0 1rem 0;
+  font-size: 1.6rem;
+}
+.ngok-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--c-gold), transparent);
+  margin: 2.5rem 0;
+}
+
+/* Le rideau sombre en arrière-plan */
+.ngok-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 6, 0.85);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 998;
+  transition: opacity 0.6s ease;
+}
+body.ngok-open .ngok-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Styles des nouveaux boutons (à adapter à ton design) */
+.btn-explore-more, .btn-close-ngok {
+  background: transparent;
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
+  padding: 0.8rem 1.6rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+.btn-explore-more:hover, .btn-close-ngok:hover {
+  background: var(--c-gold);
+  color: var(--c-surface2);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    3. L'ÉTAT AGRANDI (DÉCLENCHÉ PAR JS)
+═══════════════════════════════════════════════════════════════ */
+.ngok-card-container.is-expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 850px;
+  height: 75vh;
+  background-color: var(--c-surface2);
+  z-index: 999;
+  display: flex;
+  flex-direction: column; /* 🔄 L'image passe au-dessus, le texte au-dessous */
+  overflow: hidden;
+  overflow-y: auto; /* Permet de scroller à l'intérieur du texte s'il est long */
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* Recadrage de l'image en haut de la carte étendue */
+.ngok-card-container.is-expanded .fresco-media {
+  width: 100%;
+  height: 24vh;
+  flex-shrink: 0;
+  border-radius: 8px 8px 0 0;
+  aspect-ratio: auto;
+}
+
+/* Ajustement de la zone de texte étendue */
+.ngok-card-container.is-expanded .fresco-text {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 3rem 3rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-gold) transparent;
+}
+
+/* On affiche le texte du fichier .md et on cache le bouton "Lire la suite" */
+.ngok-card-container.is-expanded .ngok-full-content { display: block; }
+.ngok-card-container.is-expanded #open-ngok { display: none; }
+
 /* ═══════════════════════════════════════════════════════════════
    FLEUVE SANAGA : MÉTHODE DU MOTIF RÉPÉTÉ ET TEXTURÉ (ADAPTÉE)
 ═══════════════════════════════════════════════════════════════ */

@@ -111,3 +111,20 @@
     mix-blend-mode: normal;
   }
 }
+
+/* ═════════════════════════════ ANIMATION EXPANSIVE : NGOK LITUBA ═════════════════════════ */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 1. On nomme les éléments pour que l'API les suive à la trace */
+  .ngok-card-container { view-transition-name: ngok-card-view; }
+  .ngok-card-container .fresco-media { view-transition-name: ngok-media-view; }
+  .ngok-card-container .fresco-text { view-transition-name: ngok-text-view; }
+
+  /* Ajustement de la vitesse de la métamorphose */
+  ::view-transition-group(ngok-card-view),
+  ::view-transition-group(ngok-media-view),
+  ::view-transition-group(ngok-text-view) {
+    animation-duration: 0.8s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Fluide et cinématique */
+  }
+}
