@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet" />
   <script src="../js/theme.js" defer></script>
   <script src="../js/gastro-carousel.js" defer></script>
+  <script src="../js/recette.js" defer></script>
 </head>
 <body>
 
@@ -160,8 +161,18 @@
           <p class="gastro-card-text">
             Ce ragoût de feuilles vertes ancestrales de l'aire Bassa est longuement cuisiné à feu doux. Les feuilles finement découpées se lient à une sauce onctueuse de noix de palme et d'arachides écrasées, enrichie de poisson fumé et d'écrevisses. Un équilibre parfait de textures, traditionnellement sublimé par du miondo ou du plantain mûr bouilli.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>L'okok</h3>
+          <p><strong>Origine :</strong> Plat traditionnel très apprécié dans l’aire culturelle bassa.</p>
+          <p><strong>Ingrédients :</strong> Feuilles d’okok, arachides, huile de palme, poisson fumé, viande, crevettes séchées, sel, piment.</p>
+          <p><strong>Préparation :</strong> Laver et découper finement les feuilles d’okok. Préparer la pâte d’arachides, puis ajouter les condiments et l’huile de palme. Mélanger et laisser mijoter jusqu’à obtenir une sauce homogène.</p>
+          <p><strong>Cuisson :</strong> Cuisson lente à feu doux.</p>
+          <p><strong>Accompagnement :</strong> Miondo, plantain bouilli, bâton de manioc ou riz.</p>
+        </article>
       </div>
 
       <!-- CARD 2 : LE NDOLÈ -->
@@ -177,8 +188,18 @@
           <p class="gastro-card-text">
             Véritable pilier de la gastronomie Sawa et Bassa, ce chef-d'œuvre repose sur les feuilles de Vernonia. Bouillies méticuleusement à trois reprises pour dompter leur amertume, elles s'unissent à une purée d'arachides fraîches, du gingembre et de l'ail, avant d'être couronnées de crevettes crépitantes et de viande tendre.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Le ndolè</h3>
+          <p><strong>Origine :</strong> Plat emblématique du Cameroun, très présent dans les traditions culinaires bassa.</p>
+          <p><strong>Ingrédients :</strong> Feuilles de ndolè, arachides, viande, poisson, crevettes, ail, oignon, piment, huile.</p>
+          <p><strong>Préparation :</strong> Nettoyer et bouillir les feuilles de ndolè pour réduire l’amertume. Préparer la sauce à base d’arachides, ajouter la viande, le poisson et les condiments, puis laisser mijoter.</p>
+          <p><strong>Cuisson :</strong> Cuisson progressive avec réduction de l’amertume.</p>
+          <p><strong>Accompagnement :</strong> Plantain mûr, miondo, riz, manioc.</p>
+        </article>
       </div>
 
       <!-- CARD 3 : LE MBONGO'O -->
@@ -194,8 +215,18 @@
           <p class="gastro-card-text">
             Directement issu de la mémoire collective du peuple Bassa, ce plat fascine par sa sauce noire profonde comme l'ébène. Sa couleur et son parfum envoûtant proviennent d'un mélange unique d'épices tropicales méticuleusement brûlées et broyées, venant napper un poisson ou une viande longuement mijotée.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Le mbongo’o</h3>
+          <p><strong>Origine :</strong> Sauce noire traditionnelle associée à la cuisine bassa.</p>
+          <p><strong>Ingrédients :</strong> Poisson ou viande, épices grillées, tomate, oignon, ail, piment, huile de palme, sel.</p>
+          <p><strong>Préparation :</strong> Nettoyer la viande ou le poisson. Préparer les épices noires, faire revenir oignon, ail et tomate, puis ajouter la viande ou le poisson. Laisser cuire jusqu’à obtenir une sauce sombre et concentrée.</p>
+          <p><strong>Cuisson :</strong> Mijotage long à feu doux.</p>
+          <p><strong>Accompagnement :</strong> Miondo, plantain bouilli, tubercules.</p>
+        </article>
       </div>
 
       <!-- CARD 4 : LE MET DE PISTACHES -->
@@ -211,8 +242,18 @@
           <p class="gastro-card-text">
             Plat d'apparat hautement symbolique, ce pudding délicat est préparé à base de graines de courge finement écrasées. Liée aux œufs, enrichie d'écrevisses et de poissons fumés, la pâte est emballée hermétiquement dans des feuilles de bananier avant de cuire pendant des heures à la vapeur étouffée au feu de bois.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Met de pistaches</h3>
+          <p><strong>Origine :</strong> Plat traditionnel camerounais très apprécié dans plusieurs communautés, dont les Bassa.</p>
+          <p><strong>Ingrédients :</strong> Pistaches, poisson fumé, viande, crevettes séchées, œufs, huile, sel, piment.</p>
+          <p><strong>Préparation :</strong> Préparer la pâte de pistaches, ajouter les œufs battus, puis les morceaux de poisson fumé, de viande ou de crevettes. Bien mélanger, puis cuire à la vapeur ou dans des feuilles.</p>
+          <p><strong>Cuisson :</strong> Cuisson à l’étouffée ou à la vapeur.</p>
+          <p><strong>Accompagnement :</strong> Miondo, bâton de manioc, plantain, parfois riz.</p>
+        </article>
       </div>
 
       <!-- CARD 5 : LE MET D'ESCARGOTS -->
@@ -228,8 +269,18 @@
           <p class="gastro-card-text">
             Une préparation d'une grande finesse où les gros escargots de forêt sont débarrassés de leur glaire par un lavage minutieux. Ils sont ensuite étuvés à couvert dans un écrin de tomates fraîches, de poivres blancs et d'herbes sacrées comme le basilic sauvage et les feuilles d'odjom pour préserver toute leur tendreté.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Met d’escargots cuit à l’étouffée</h3>
+          <p><strong>Origine :</strong> Préparation traditionnelle à base d’escargots, très appréciée dans plusieurs cuisines camerounaises.</p>
+          <p><strong>Ingrédients :</strong> Escargots, oignon, tomate, ail, piment, huile, sel, poivre, épices locales.</p>
+          <p><strong>Préparation :</strong> Bien nettoyer les escargots. Préparer une base avec oignon, ail, tomate et assaisonnement. Ajouter les escargots, mélanger, puis couvrir hermétiquement pour une cuisson à l’étouffée.</p>
+          <p><strong>Cuisson :</strong> Cuisson lente, couverte, avec peu d’eau.</p>
+          <p><strong>Accompagnement :</strong> Plantain, riz, miondo, bâton de manioc.</p>
+        </article>
       </div>
 
       <!-- CARD 6 : LE MET DE MAÏS -->
@@ -245,8 +296,18 @@
           <p class="gastro-card-text">
             Ce gâteau de terroir rustique et réconfortant met en scène le maïs frais du village, pilé ou moulu. Combiné à la rondeur de l'huile de palme rouge brute et à des éclats d'arachides, il est façonné et emballé dans des feuilles végétales protectrices pour acquérir sa texture ferme et généreuse à la vapeur.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Met de maïs (mbaafon)</h3>
+          <p><strong>Origine :</strong> Préparation traditionnelle à base de maïs, servie dans les repas familiaux et festifs.</p>
+          <p><strong>Ingrédients :</strong> Maïs frais ou maïs moulu, huile de palme, sel, parfois arachides ou condiments selon la variante.</p>
+          <p><strong>Préparation :</strong> Préparer le maïs selon la forme utilisée. Le mélanger avec les assaisonnements et, selon la recette, un corps gras comme l’huile de palme. Former la préparation ou la disposer dans des feuilles si nécessaire.</p>
+          <p><strong>Cuisson :</strong> Cuisson vapeur ou cuisson douce selon la tradition familiale.</p>
+          <p><strong>Accompagnement :</strong> Sauce graine, sauce tomate, viande fumée, poisson.</p>
+        </article>
       </div>
 
       <!-- CARD 7 : LE NSUGI -->
@@ -262,8 +323,18 @@
           <p class="gastro-card-text">
             Une sauce dense et profondément parfumée dont le secret réside dans l'extraction du jus pur des noix de palme pochées et pilées au mortier. Passé délicatement au tamis, ce nectar d'or rouge mijote lentement avec du gombo, du poisson fumé et des feuilles d'odjom jusqu'à l'obtention d'un velouté puissant.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Le nsugi</h3>
+          <p><strong>Origine :</strong> Sauce traditionnelle à base de noir de palme, présente dans plusieurs cuisines camerounaises.</p>
+          <p><strong>Ingrédients :</strong> Jus ou pulpe de palme, viande ou poisson fumé, oignon, ail, piment, sel, épices locales.</p>
+          <p><strong>Préparation :</strong> Préparer la base de palme, faire revenir les condiments, ajouter la viande ou le poisson fumé, puis laisser cuire à feu doux jusqu’à obtenir une sauce bien liée.</p>
+          <p><strong>Cuisson :</strong> Mijotage lent.</p>
+          <p><strong>Accompagnement :</strong> Fufu, miondo, plantain, tubercules.</p>
+        </article>
       </div>
 
       <!-- CARD 8 : LE MINTOUMBA -->
@@ -279,8 +350,18 @@
           <p class="gastro-card-text">
             Gâteau totem et véritable marqueur identitaire de la culture Bassa. Conçu à base de manioc frais sélectionné et mis à fermenter, il est vigoureusement pétri avec de l'huile de palme rouge et une pointe de sel, puis solidement ficelé dans des feuilles de marantacées avant d'être cuit à la vapeur.
           </p>
-          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+          <a href="#" class="gastro-card-link js-open-recipe">Découvrir la recette détaillée <span class="arrow">→</span></a>
         </div>
+
+        <article class="recette-card">
+          <button class="close-recipe" aria-label="Fermer">&times;</button>
+          <h3>Le mimtumba</h3>
+          <p><strong>Origine :</strong> Gâteau traditionnel du peuple bassa.</p>
+          <p><strong>Ingrédients :</strong> Manioc fermenté, huile de palme, sel, feuilles pour l’emballage.</p>
+          <p><strong>Préparation :</strong> Râper ou transformer le manioc fermenté, le mélanger avec l’huile de palme et l’assaisonnement, former des portions compactes, puis emballer dans des feuilles.</p>
+          <p><strong>Cuisson :</strong> Cuisson vapeur prolongée.</p>
+          <p><strong>Accompagnement :</strong> Peut se manger seul ou avec des sauces traditionnelles.</p>
+        </article>
       </div>
 
     </section>

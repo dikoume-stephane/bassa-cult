@@ -115,6 +115,45 @@
   margin-top: 0.2rem;
 }
 
+/* 📱 RESPONSIVE : Section 1 - Carrousel Infini (À ajouter dans gastronomie.css) */
+@media (max-width: 768px) {
+  .gastro-title {
+    font-size: 2rem; /* Titre principal plus compact */
+  }
+
+  .gastro-subtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .gastro-carousel-viewport {
+    padding: 1.5rem 0; /* Moins d'espace perdu en haut et en bas */
+  }
+
+  .gastro-carousel-track {
+    gap: 20px; /* On rapproche les fiches pour qu'on devine les plats suivants */
+  }
+
+  .gastro-card {
+    flex: 0 0 230px; /* On passe la largeur de la carte de 320px à 230px */
+    height: 320px;   /* On baisse la hauteur de 420px à 320px */
+    transform: scale(0.88); /* Les cartes de côté restent visibles mais discrètes */
+  }
+
+  .gastro-card.is-active {
+    transform: scale(1.05); /* Un zoom à 1.05 suffit sur mobile pour éviter de déborder de l'écran */
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+  }
+
+  .gastro-card-overlay {
+    padding: 1.2rem; /* On réduit le rectangle de texte interne */
+  }
+
+  .gastro-card-overlay h3 {
+    font-size: 1.2rem; /* Typographie plus petite pour que "Le met d'escargots" tienne sur la ligne */
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
     SECTION 2 : LES CARTES LARGES ÉDITORIALES (STYLE MUSÉE)
 ═══════════════════════════════════════════════════════════════ */
@@ -315,10 +354,9 @@
 .recette-card {
   position: absolute;
   top: 0;
-  right: 0;
   width: 55%; /* Prend exactement la même place que la partie texte .gastro-card-body */
   height: 100%;
-  background-color: #0e0c0a; /* Même fond que le bloc texte */
+  background-color: var(--c-bg); /* Même fond que le bloc texte */
   padding: 3rem 4rem 3rem 4rem;
   box-sizing: border-box;
   overflow-y: auto; /* Permet de scroller à l'intérieur si le texte est long */
@@ -327,7 +365,6 @@
   /* Animation d'apparition fluide */
   opacity: 0;
   pointer-events: none;
-  transform: translateX(30px);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
@@ -338,11 +375,31 @@
   transform: translateX(0);
 }
 
+/*  CARTES IMPAIRES (1, 3, 5, 7) : Texte à droite -> Recette à DROITE */
+.gastro-wide-card:nth-child(odd) .recette-card {
+  right: 0;
+  left: auto;
+  transform: translateX(30px); /* Glisse vers la droite à la fermeture */
+}
+.gastro-wide-card:nth-child(odd) .recette-card.is-visible {
+  transform: translateX(0);
+}
+
+/*  CARTES PAIRES (2, 4, 6, 8) : Texte à gauche -> Recette à GAUCHE */
+.gastro-wide-card:nth-child(even) .recette-card {
+  left: 0;
+  right: auto;
+  transform: translateX(-30px); /* Glisse vers la gauche à la fermeture */
+}
+.gastro-wide-card:nth-child(even) .recette-card.is-visible {
+  transform: translateX(0);
+}
+
 /* Titre interne de la recette */
 .recette-card h3 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 2rem;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   margin-top: 0;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
@@ -350,15 +407,15 @@
 
 /* Paragraphes de la recette */
 .recette-card p {
-  font-family: var(--font-body, sans-serif);
-  color: #c4bfae;
+  font-family: var(--font-body);
+  color: var(--c-text-light);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 0 1rem 0;
 }
 
 .recette-card p strong {
-  color: #f5f2eb;
+  color: var(--c-cream);
 }
 
 /* Le bouton de fermeture (La croix X) */
@@ -368,7 +425,7 @@
   right: 2rem;
   background: none;
   border: none;
-  color: #8c8275;
+  color: var(--c-cream);
   font-size: 2rem;
   cursor: pointer;
   line-height: 1;
@@ -376,30 +433,33 @@
 }
 
 .close-recipe:hover {
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   transform: scale(1.1);
 }
 
 /* 📱 COMPORTEMENT SMARTPHONE (Plein écran devant tout le monde) */
 @media (max-width: 992px) {
-  .recette-card {
-    position: fixed; /* Sort du flux de la carte pour se mettre sur tout l'écran */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(10, 8, 6, 0.98); /* Fond presque totalement opaque */
-    padding: 5rem 2rem 2rem 2rem;
-    transform: translateY(50px); /* L'animation vient d'en bas sur mobile */
-  }
-  
-  .recette-card.is-visible {
-    transform: translateY(0);
-  }
+    .gastro-wide-card:nth-child(odd) .recette-card,
+    .gastro-wide-card:nth-child(even) .recette-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--c-bg);
+        padding: 4rem 2rem 2rem 2rem;
+        transform: translateY(20px); /* L'animation vient d'en bas sur mobile */
+    }
+
+    .gastro-wide-card:nth-child(odd) .recette-card.is-visible,
+    .gastro-wide-card:nth-child(even) .recette-card.is-visible {
+        transform: translateY(0);
+    }
 
   .close-recipe {
-    top: 2rem;
-    right: 2rem;
-    font-size: 2.5rem; /* Plus grosse croix pour faciliter le clic au pouce */
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.2rem; /* Plus grosse croix pour faciliter le clic au pouce */
   }
 }
