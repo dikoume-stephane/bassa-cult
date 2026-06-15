@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mbog — Le Peuple Bassa</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/gastro.css" />
   <link rel="stylesheet" href="../css/transition.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet" />
   <script src="../js/theme.js" defer></script>
+  <script src="../js/gastro-carousel.js" defer></script>
 </head>
 <body>
 
@@ -57,16 +59,16 @@
   </nav>
 
   <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-  <header class="hero" id="accueil">
+  <header class="hero" id="gastronomie">
   
     <div class="hero-bg" style="background-image: url('../assets/images/bongo\'o.webp');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-grain"></div>
 
     <div class="hero-content">
-      <p class="hero-eyebrow">retraçons</p>
+      <p class="hero-eyebrow">decouvrons</p>
       <h2 class="hero-title">
-        <span class="hero-title-big">les origines</span>
+        <span class="hero-title-big gastro-T">la grastronomie</span>
       </h2>
       <a href="#explorer" class="hero-scroll-cta">
         <span>commençons l'exploration</span>
@@ -78,6 +80,210 @@
 
   <!-- main -->
   <main>
+
+    <section class="gastro-intro-section">
+      <div class="gastro-header">
+        <span class="gastro-tagline">Art Culinaire</span>
+        <h2 class="gastro-title">Les Trésors Gastronomiques Bassa</h2>
+        <p class="gastro-subtitle">Une immersion dans une cuisine sacrée, riche en saveurs ancestrales et en rituels de partage.</p>
+      </div>
+
+      <div class="gastro-carousel-viewport">
+        <div class="gastro-carousel-track" id="gastro-track">
+          
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/okok.jpg" alt="L'Okok Bassa" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>L'Okok</h3>
+            </div>
+          </div>
+
+          <div class="gastro-card is-active">
+            <img src="../assets/images/gastro/ndole.jpg" alt="Le Ndolè" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Le Ndolè</h3>
+            </div>
+          </div>
+
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/mbongo.jpg" alt="Le Mbongo'o" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Le Mbongo'o</h3>
+            </div>
+          </div>
+
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/pistache.jpg" alt="Met de pistaches" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Met de pistaches</h3>
+            </div>
+          </div>
+
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/escargots.jpg" alt="Le met d'escargots" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Met d'escargots <small>(à l'étouffée)</small></h3>
+            </div>
+          </div>
+
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/mais.jpg" alt="Le met de maïs" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Met de maïs <small>(Mbaafon)</small></h3>
+            </div>
+          </div>
+
+          <div class="gastro-card">
+            <img src="../assets/images/gastro/nsugi.jpg" alt="Le Nsugi" class="gastro-img">
+            <div class="gastro-card-overlay">
+              <h3>Le Nsugi <small>(Sauce noix de palme)</small></h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- section2 -->
+    <section class="gastro-details-section">
+      
+      <!-- CARD 1 : L'OKOK -->
+      <div class="gastro-wide-card gastro-wide-card-right">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/okok-wide.jpg" alt="Préparation de l'Okok Bassa" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Tradition Festive
+          </div>
+          <h3 class="gastro-card-title">L'Okok <small>(ou Ikok)</small></h3>
+          <p class="gastro-card-text">
+            Ce ragoût de feuilles vertes ancestrales de l'aire Bassa est longuement cuisiné à feu doux. Les feuilles finement découpées se lient à une sauce onctueuse de noix de palme et d'arachides écrasées, enrichie de poisson fumé et d'écrevisses. Un équilibre parfait de textures, traditionnellement sublimé par du miondo ou du plantain mûr bouilli.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 2 : LE NDOLÈ -->
+      <div class="gastro-wide-card gastro-wide-card-left">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/ndole-wide.jpg" alt="Plat de Ndolè traditionnel" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Plat Emblématique
+          </div>
+          <h3 class="gastro-card-title">Le Ndolè <small>(ou Metet)</small></h3>
+          <p class="gastro-card-text">
+            Véritable pilier de la gastronomie Sawa et Bassa, ce chef-d'œuvre repose sur les feuilles de Vernonia. Bouillies méticuleusement à trois reprises pour dompter leur amertume, elles s'unissent à une purée d'arachides fraîches, du gingembre et de l'ail, avant d'être couronnées de crevettes crépitantes et de viande tendre.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 3 : LE MBONGO'O -->
+      <div class="gastro-wide-card gastro-wide-card-right">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/mbongo-wide.jpg" alt="Sauce noire Mbongo'o" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Sauce Ébène
+          </div>
+          <h3 class="gastro-card-title">Le Mbongo'o <small>(Mbongo Tchobi)</small></h3>
+          <p class="gastro-card-text">
+            Directement issu de la mémoire collective du peuple Bassa, ce plat fascine par sa sauce noire profonde comme l'ébène. Sa couleur et son parfum envoûtant proviennent d'un mélange unique d'épices tropicales méticuleusement brûlées et broyées, venant napper un poisson ou une viande longuement mijotée.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 4 : LE MET DE PISTACHES -->
+      <div class="gastro-wide-card gastro-wide-card-left">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/pistache-wide.jpg" alt="Gâteau de pistache traditionnel" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Mukon mwa Ngondo
+          </div>
+          <h3 class="gastro-card-title">Le Met de Pistaches</h3>
+          <p class="gastro-card-text">
+            Plat d'apparat hautement symbolique, ce pudding délicat est préparé à base de graines de courge finement écrasées. Liée aux œufs, enrichie d'écrevisses et de poissons fumés, la pâte est emballée hermétiquement dans des feuilles de bananier avant de cuire pendant des heures à la vapeur étouffée au feu de bois.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 5 : LE MET D'ESCARGOTS -->
+      <div class="gastro-wide-card gastro-wide-card-right">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/escargots-wide.jpg" alt="Mets d'escargots à l'étouffée" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Cuisson à l'Étouffée
+          </div>
+          <h3 class="gastro-card-title">Le Met d'Escargots</h3>
+          <p class="gastro-card-text">
+            Une préparation d'une grande finesse où les gros escargots de forêt sont débarrassés de leur glaire par un lavage minutieux. Ils sont ensuite étuvés à couvert dans un écrin de tomates fraîches, de poivres blancs et d'herbes sacrées comme le basilic sauvage et les feuilles d'odjom pour préserver toute leur tendreté.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 6 : LE MET DE MAÏS -->
+      <div class="gastro-wide-card gastro-wide-card-left">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/mais-wide.jpg" alt="Mbaafon gâteau de maïs" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Mbaafon
+          </div>
+          <h3 class="gastro-card-title">Le Met de Maïs <small>(Mbaafon)</small></h3>
+          <p class="gastro-card-text">
+            Ce gâteau de terroir rustique et réconfortant met en scène le maïs frais du village, pilé ou moulu. Combiné à la rondeur de l'huile de palme rouge brute et à des éclats d'arachides, il est façonné et emballé dans des feuilles végétales protectrices pour acquérir sa texture ferme et généreuse à la vapeur.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 7 : LE NSUGI -->
+      <div class="gastro-wide-card gastro-wide-card-right">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/nsugi-wide.jpg" alt="Sauce au noir de palme Nsugi" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Noir de Palme
+          </div>
+          <h3 class="gastro-card-title">Le Nsugi <small>(Sauce Graine)</small></h3>
+          <p class="gastro-card-text">
+            Une sauce dense et profondément parfumée dont le secret réside dans l'extraction du jus pur des noix de palme pochées et pilées au mortier. Passé délicatement au tamis, ce nectar d'or rouge mijote lentement avec du gombo, du poisson fumé et des feuilles d'odjom jusqu'à l'obtention d'un velouté puissant.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- CARD 8 : LE MINTOUMBA -->
+      <div class="gastro-wide-card gastro-wide-card-left">
+        <div class="gastro-card-media">
+          <img src="../assets/images/gastro/mintoumba-wide.jpg" alt="Mintoumba gâteau de manioc" class="gastro-wide-img">
+        </div>
+        <div class="gastro-card-body">
+          <div class="gastro-card-tagline">
+            <span class="gastro-line"></span>Le Caviar des Bassa
+          </div>
+          <h3 class="gastro-card-title">Le Mintoumba <small>(Mimtumba)</small></h3>
+          <p class="gastro-card-text">
+            Gâteau totem et véritable marqueur identitaire de la culture Bassa. Conçu à base de manioc frais sélectionné et mis à fermenter, il est vigoureusement pétri avec de l'huile de palme rouge et une pointe de sel, puis solidement ficelé dans des feuilles de marantacées avant d'être cuit à la vapeur.
+          </p>
+          <a href="#" class="gastro-card-link">Découvrir la recette détaillée <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
