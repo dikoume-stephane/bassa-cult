@@ -101,7 +101,7 @@
 
 .gastro-card-overlay h3 {
   font-family: var(--font-display);
-  color: var(--c-text-light);
+  color: rgb(246, 245, 244);
   font-size: 1.6rem;
   margin: 0;
 }
