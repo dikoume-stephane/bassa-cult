@@ -1,0 +1,232 @@
+/* ═══════════════════════════════════════════════════════════════
+    DESIGN DE LA PAGE LANGUE & LITTÉRATURE
+═══════════════════════════════════════════════════════════════ */
+
+.langue-section {
+  padding: 4rem 10%;
+  background-color: #0e0c0a;
+}
+
+.section-header h2 {
+  font-family: var(--font-display, serif);
+  font-size: 2.5rem;
+  color: #f5f2eb;
+  margin: 0 0 2rem 0;
+}
+
+/* ─── SECTION 1 : LEXIQUE ─── */
+.lexique-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.lexique-card {
+  background: #14120f;
+  border-left: 3px solid var(--c-gold, #d4af37);
+  padding: 2rem;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.lexique-card:hover {
+  transform: translateY(-5px);
+}
+
+.lexique-word {
+  font-family: var(--font-display, serif);
+  font-size: 1.8rem;
+  color: var(--c-gold, #d4af37);
+  margin-bottom: 0.5rem;
+}
+
+.lexique-translation {
+  font-size: 0.95rem;
+  color: #f5f2eb;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.lexique-usage {
+  color: #c4bfae;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ─── SECTION 2 : FIGURES LITTÉRAIRES ─── */
+.figures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.figure-card {
+  background: #14120f;
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #24201a;
+}
+
+.figure-img-wrapper {
+  flex: 0 0 120px;
+  height: 150px;
+  background: #24201a; /* En attendant ton image */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.figure-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.figure-card:hover .figure-img {
+  filter: grayscale(0%);
+}
+
+.figure-info h3 {
+  font-family: var(--font-display, serif);
+  font-size: 1.4rem;
+  color: #f5f2eb;
+  margin: 0 0 0.2rem 0;
+}
+
+.figure-role {
+  font-size: 0.85rem;
+  color: var(--c-gold, #d4af37);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.figure-info p {
+  color: #c4bfae;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── SECTION 3 : FLIP CARDS PROVERBES ─── */
+.proverbes-subtitle {
+  color: #8c8275;
+  margin-bottom: 2rem;
+}
+
+.proverbes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Conteneur principal de la perspective */
+.proverbe-flip-card {
+  background-color: transparent;
+  height: 280px;
+  perspective: 1000px; /* Crucial pour l'effet 3D */
+  cursor: pointer;
+}
+
+/* Le wrapper interne qui subit la rotation */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Classe de rotation déclenchée au clic par JS */
+.proverbe-flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Styles communs pour le RECTO et le VERSO */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Cache le côté opposé pendant le retournement */
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #24201a;
+}
+
+/* RECTO */
+.flip-card-front {
+  background-color: #14120f;
+  color: #f5f2eb;
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: #24201a;
+  line-height: 0;
+  margin-bottom: 1rem;
+}
+
+.proverbe-bassa {
+  font-family: var(--font-display, serif);
+  font-size: 1.35rem;
+  color: var(--c-gold, #d4af37);
+  line-height: 1.4;
+  margin: 0 0 1rem 0;
+}
+
+.proverbe-literal {
+  color: #8c8275;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* VERSO */
+.flip-card-back {
+  background-color: #1a1713;
+  color: #c4bfae;
+  transform: rotateY(180deg); /* Déjà retourné à la base */
+  border-color: var(--c-gold, #d4af37);
+}
+
+.flip-card-back h3 {
+  font-family: var(--font-display, serif);
+  color: #f5f2eb;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.proverbe-sens {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Petite indication textuelle en bas de carte */
+.flip-hint {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.75rem;
+  color: #4a4238;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .langue-section { padding: 3rem 5%; }
+  .figure-card { flex-direction: column; gap: 1rem; }
+  .figure-img-wrapper { width: 100%; height: 180px; }
+  .figures-grid { grid-template-columns: 1fr; }
+}

@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mbog — Le Peuple Bassa</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/langue.css" />
   <link rel="stylesheet" href="../css/transition.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow+Condensed:wght@200;300;400&display=swap" rel="stylesheet" />
   <script src="../js/theme.js" defer></script>
+  <script src="../js/langue-proverbe.js" defer></script>
 </head>
 <body>
 
@@ -77,6 +79,102 @@
   </header>
   <!-- main -->
   <main>
+    <section class="langue-section">
+      <div class="section-header">
+        <span class="gastro-line"></span>
+        <h2>Initiation & Mots du Quotidien</h2>
+      </div>
+      
+      <div class="lexique-grid">
+        <div class="lexique-card">
+          <div class="lexique-word">Mvói</div>
+          <div class="lexique-translation">Bonjour / La paix soit avec toi</div>
+          <p class="lexique-usage">Salutation principale utilisée pour s'enquérir de l'état de paix de son interlocuteur.</p>
+        </div>
+        <div class="lexique-card">
+          <div class="lexique-word">Me konda</div>
+          <div class="lexique-translation">Merci</div>
+          <p class="lexique-usage">Expression de gratitude. On peut aussi entendre "A njee konda".</p>
+        </div>
+        <div class="lexique-card">
+          <div class="lexique-word">Ŋgwaa</div>
+          <div class="lexique-translation">L'ami / Le frère</div>
+          <p class="lexique-usage">Terme d'affection et de proximité couramment utilisé dans les discussions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="langue-section">
+      <div class="section-header">
+        <span class="gastro-line"></span>
+        <h2>Les Grandes Figures Littéraires</h2>
+      </div>
+
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-img-wrapper">
+            <img src="../assets/images/figures/werewere.jpg" alt="Werewere Liking" class="figure-img">
+          </div>
+          <div class="figure-info">
+            <h3>Werewere Liking</h3>
+            <span class="figure-role">Écrivaine & Dramaturge</span>
+            <p>Originaire du pays Bassa, figure majeure de la littérature africaine et fondatrice du village Ki-Yi M'Bock. Son œuvre explore les rituels et la mémoire ancestrale.</p>
+          </div>
+        </div>
+
+        <div class="figure-card">
+          <div class="figure-info">
+            <h3>Jean-Marcel E. Wognon</h3>
+            <span class="figure-role">Historien & Chercheur</span>
+            <p>Auteur de monographies historiques majeures basées sur la tradition orale, contribuant activement à la préservation des récits de migration et des structures sociales Bassa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="langue-section">
+      <div class="section-header">
+        <span class="gastro-line"></span>
+        <h2>Proverbes Bassa</h2>
+      </div>
+      <p class="proverbes-subtitle">Cliquez sur une carte pour révéler la sagesse et le sens caché du proverbe.</p>
+
+      <div class="proverbes-grid">
+        
+        <div class="proverbe-flip-card js-flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-icon">“</div>
+              <p class="proverbe-bassa">Ngaandak mi nloŋ mi ntiɓil nkoŋ.</p>
+              <p class="proverbe-literal"><em>Traduction :</em> L'union des petites fourmis construit le nid.</p>
+              <span class="flip-hint">Retourner ↻</span>
+            </div>
+            <div class="flip-card-back">
+              <h3>Signification</h3>
+              <p class="proverbe-sens">C'est l'équivalent de "l'union fait la force". Ce proverbe prône la solidarité, le travail communautaire (Líbaa) et rappelle que les efforts collectifs accomplissent de grandes choses.</p>
+              <span class="flip-hint">Retourner ↻</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proverbe-flip-card js-flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="card-icon">“</div>
+              <p class="proverbe-bassa">Mut a kwolet le a nyo limen.</p>
+              <p class="proverbe-literal"><em>Traduction :</em> L'homme ne grandit que s'il accepte d'avaler sa salive.</p>
+              <span class="flip-hint">Retourner ↻</span>
+            </div>
+            <div class="flip-card-back">
+              <h3>Signification</h3>
+              <p class="proverbe-sens">Une leçon essentielle d'humilité et de patience. Pour acquérir la sagesse ou réussir dans la communauté, il faut savoir retenir ses impulsions, écouter les aînés et encaisser les épreuves sans orgueil.</p>
+              <span class="flip-hint">Retourner ↻</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
