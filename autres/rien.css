@@ -181,3 +181,32 @@ body {
   background: #faf7f2;
   font-family: Arial, sans-serif;
 }
+
+.basaa-alphabet-section,
+.basaa-double-articulation-section,
+.basaa-symbols-section {
+  margin-bottom: 2.5rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.card p {
+  margin: 0.4rem 0;
+}
