@@ -4,10 +4,9 @@
 
 .societe-section {
   padding: 5rem 10%;
-  background-color: #0e0c0a; /* Ton fond sombre fétiche */
+  background-color: #0e0c0a;
 }
 
-/* Introduction de la page */
 .societe-intro {
   max-width: 800px;
   margin: 0 auto 4rem auto;
@@ -21,91 +20,260 @@
   line-height: 1.7;
 }
 
-/* Grille Responsive des Piliers */
+/* Grille principale */
 .societe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
 }
 
-/* Carte de Pilier Unique */
+/* Modification de la Carte pour accueillir l'image */
 .pillar-card {
   background-color: #14120f;
   border: 1px solid #24201a;
-  padding: 2.5rem;
-  border-radius: 6px;
+  padding: 0; /* On retire le padding global pour coller l'image aux bords */
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Important pour que l'image respecte le border-radius de la carte */
   transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Effet au survol d'une carte */
+/* 📸 Zone Image */
+.pillar-img-wrapper {
+  width: 100%;
+  height: 200px; /* Hauteur fixe idéale pour garder l'alignement des grilles */
+  overflow: hidden;
+  background-color: #24201a; /* Fond neutre en attendant le chargement de l'image */
+}
+
+.pillar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ✍️ Zone de Contenu Textuel sous l'image */
+.pillar-content {
+  padding: 2rem; /* Le padding est maintenant ici */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Permet d'égaliser la hauteur des cartes si un texte est plus court */
+}
+
+/* 🔥 EFFETS AU SURVOL DE LA CARTE */
 .pillar-card:hover {
   transform: translateY(-5px);
   border-color: var(--c-gold, #d4af37);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Alignement du Chiffre et du Titre */
+/* Zoom très élégant sur l'image au survol de sa carte */
+.pillar-card:hover .pillar-img {
+  transform: scale(1.06);
+}
+
+/* En-tête interne */
 .pillar-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .pillar-num {
   font-family: var(--font-display, serif);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--c-gold, #d4af37);
   font-weight: bold;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .pillar-card h3 {
   font-family: var(--font-display, serif);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #f5f2eb;
   margin: 0;
 }
 
-/* Le sous-titre du concept (en Or discret) */
 .pillar-concept {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--c-gold, #d4af37);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.2rem 0;
   font-weight: 600;
 }
 
-/* Texte descriptif interne */
 .pillar-text {
   font-family: var(--font-body, sans-serif);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #c4bfae;
   line-height: 1.6;
   margin: 0;
 }
 
 .pillar-text strong {
-  color: #f5f2eb; /* Met en valeur Babimbi, Likol, Bikok */
+  color: #f5f2eb;
   font-weight: 600;
 }
 
-/* 📱 RESPONSIVE (Tablettes et Mobiles) */
+/* 📱 RESPONSIVE */
 @media (max-width: 992px) {
   .societe-section {
     padding: 4rem 5%;
   }
-  
   .societe-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
   }
-  
-  .pillar-card {
-    padding: 2rem;
+  .pillar-img-wrapper {
+    height: 180px; /* On réduit un peu la hauteur de l'image sur petit écran */
+  }
+  .pillar-content {
+    padding: 1.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 2 : STYLE DU MUSÉE DES SYMBOLES & TENUES
+═══════════════════════════════════════════════════════════════ */
+
+.elements-section {
+  padding: 6rem 10%;
+  background-color: #0b0907; /* Légère variation de noir pour couper avec la section 1 */
+  border-top: 1px solid #1a1713;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  font-family: var(--font-body, sans-serif);
+  color: #8c8275;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Enveloppe par grande catégorie (Tenues / Objets) */
+.category-wrapper {
+  margin-bottom: 5rem;
+}
+
+.category-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* Titre de la sous-catégorie */
+.category-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.8rem;
+  color: var(--c-gold, #d4af37);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Petite ligne dorée sous le titre de la catégorie */
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--c-gold, #d4af37);
+}
+
+/* Grille adaptative pour les éléments (plus compacte que la section 1) */
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Carte Élément Unique */
+.element-card {
+  background-color: #12100e;
+  border: 1px solid #1f1b16;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Boîte de l'image (Format paysage compact) */
+.element-img-box {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background-color: #1a1713;
+  position: relative;
+}
+
+.element-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(85%); /* Un peu plus sombre par défaut pour le côté mystique */
+}
+
+/* Zone d'information sous l'image */
+.element-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.element-info h4 {
+  font-family: var(--font-display, serif);
+  font-size: 1.25rem;
+  color: #f5f2eb;
+  margin: 0 0 0.7rem 0;
+  transition: color 0.3s ease;
+}
+
+.element-info p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #a69f92;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 🔥 EFFETS INTERACTIFS AU SURVOL */
+.element-card:hover {
+  border-color: var(--c-gold, #d4af37);
+  transform: translateY(-3px);
+}
+
+/* L'image s'éclaire et zoome légèrement */
+.element-card:hover .element-img {
+  transform: scale(1.04);
+  filter: brightness(100%);
+}
+
+/* Le titre passe en couleur or au survol */
+.element-card:hover .element-info h4 {
+  color: var(--c-gold, #d4af37);
+}
+
+/* 📱 ADAPTATION ÉCRANS MOBILES */
+@media (max-width: 768px) {
+  .elements-section {
+    padding: 4rem 5%;
+  }
+  .elements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.2rem;
+  }
+  .category-title {
+    font-size: 1.5rem;
   }
 }
