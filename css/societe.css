@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 1 : SOCIÉTÉ & TRADITIONS - DESIGN DES PILIERS
+═══════════════════════════════════════════════════════════════ */
+
+.societe-section {
+  padding: 5rem 10%;
+  background-color: #0e0c0a; /* Ton fond sombre fétiche */
+}
+
+/* Introduction de la page */
+.societe-intro {
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.societe-intro p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.15rem;
+  color: #c4bfae;
+  line-height: 1.7;
+}
+
+/* Grille Responsive des Piliers */
+.societe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Carte de Pilier Unique */
+.pillar-card {
+  background-color: #14120f;
+  border: 1px solid #24201a;
+  padding: 2.5rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effet au survol d'une carte */
+.pillar-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--c-gold, #d4af37);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Alignement du Chiffre et du Titre */
+.pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-num {
+  font-family: var(--font-display, serif);
+  font-size: 1.5rem;
+  color: var(--c-gold, #d4af37);
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+.pillar-card h3 {
+  font-family: var(--font-display, serif);
+  font-size: 1.6rem;
+  color: #f5f2eb;
+  margin: 0;
+}
+
+/* Le sous-titre du concept (en Or discret) */
+.pillar-concept {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-gold, #d4af37);
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+}
+
+/* Texte descriptif interne */
+.pillar-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  color: #c4bfae;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pillar-text strong {
+  color: #f5f2eb; /* Met en valeur Babimbi, Likol, Bikok */
+  font-weight: 600;
+}
+
+/* 📱 RESPONSIVE (Tablettes et Mobiles) */
+@media (max-width: 992px) {
+  .societe-section {
+    padding: 4rem 5%;
+  }
+  
+  .societe-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .pillar-card {
+    padding: 2rem;
+  }
+}
