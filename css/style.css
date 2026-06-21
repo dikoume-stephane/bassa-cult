@@ -139,6 +139,18 @@ ul { list-style: none; }
   color: var(--c-gold);
   font-size: 1.2rem;
 }
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: invert(0.9) sepia(0.2) saturate(2) hue-rotate(10deg) brightness(1.2);
+}
+[data-theme="light"] .logo-icon {
+  filter: invert(0.15) sepia(0.3) saturate(3) hue-rotate(10deg) brightness(0.8);
+}
+[data-theme="light"] .logo-icon {
+  filter: invert(0.15) sepia(0.3) saturate(3) hue-rotate(10deg) brightness(0.8);
+}
 .logo-text {
   font-family: var(--font-display);
   font-size: 1.1rem;
