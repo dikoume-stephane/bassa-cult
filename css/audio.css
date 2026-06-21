@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════
+   AUDIO WIDGET — Ambiance Sonore Culturelle
+   Widget flottant en bas a droite
+═══════════════════════════════════════════════════════════════ */
+
+.audio-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ── BOUTON PRINCIPAL ─────────────────────────────────── */
+.audio-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--c-gold);
+  background: rgba(14, 12, 10, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--c-gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.audio-btn:hover {
+  background: var(--c-gold);
+  color: var(--c-bg);
+  transform: scale(1.08);
+  box-shadow: 0 4px 25px rgba(201, 168, 76, 0.35);
+}
+
+.audio-btn.is-playing {
+  background: var(--c-gold);
+  color: var(--c-bg);
+  animation: audioPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes audioPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(201, 168, 76, 0.2); }
+  50%      { box-shadow: 0 4px 30px rgba(201, 168, 76, 0.5); }
+}
+
+.audio-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── PANNEAU DE VOLUME ────────────────────────────────── */
+.audio-volume-panel {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              opacity 0.3s ease,
+              margin-left 0.4s ease;
+  opacity: 0;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.audio-widget:hover .audio-volume-panel,
+.audio-widget:focus-within .audio-volume-panel {
+  width: 100px;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* ── SLIDER CUSTOM ────────────────────────────────────── */
+.audio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--c-surface2);
+  outline: none;
+  cursor: pointer;
+}
+
+.audio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  border: 2px solid var(--c-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.audio-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.audio-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  border: 2px solid var(--c-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+/* ── ADAPTATION THEME LIGHT ───────────────────────────── */
+[data-theme="light"] .audio-btn {
+  background: rgba(242, 234, 216, 0.85);
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+}
+
+[data-theme="light"] .audio-btn.is-playing {
+  background: var(--c-gold);
+  color: #fff;
+}
+
+[data-theme="light"] .audio-slider {
+  background: var(--c-surface2);
+}
+
+/* ── RESPONSIVE MOBILE ────────────────────────────────── */
+@media (max-width: 768px) {
+  .audio-widget {
+    bottom: 74px; /* Au-dessus de la navbar mobile */
+    right: 16px;
+  }
+
+  .audio-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .audio-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .audio-widget:hover .audio-volume-panel {
+    width: 80px;
+  }
+}

@@ -509,8 +509,8 @@
 
 .personalities-section {
   padding: 6rem 10%;
-  background-color: #0b0908;
-  border-top: 1px solid #1a1713;
+  background-color: var(--c-bg);
+  border-top: 1px solid var(--c-surface);
 }
 
 .personalities-intro {
@@ -518,7 +518,7 @@
   margin: 0 auto 4.5rem auto;
   text-align: center;
   font-family: var(--font-body, sans-serif);
-  color: #a69f92;
+  color: var(--c-text-dim);
 }
 
 .personalities-grid {
@@ -532,11 +532,11 @@
 /* La Carte devient un bloc à aspect fixe */
 .personality-card {
   position: relative;
-  background-color: #12100e;
-  border: 1px solid #1f1b16;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-surface2);
   border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 3 / 4; /* Donne un format portrait de magazine très stable */
+  aspect-ratio: 3 / 4;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -562,22 +562,22 @@
   height: 42px;
   border-radius: 50%;
   background-color: rgba(14, 12, 10, 0.9);
-  border: 1px solid var(--c-gold, #d4af37);
-  color: var(--c-gold, #d4af37);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
   font-size: 1.6rem;
   font-weight: 300;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10; /* Toujours au-dessus de l'overlay de texte */
+  z-index: 10;
   transition: transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .reveal-btn:hover {
-  background-color: var(--c-gold, #d4af37);
-  color: #0e0c0a;
+  background-color: var(--c-gold);
+  color: var(--c-bg);
 }
 
 /* ── L'OVERLAY TEXTE (MASQUÉ AU DÉPART) ── */
@@ -587,8 +587,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-gradient: linear-gradient(to top, rgba(14, 12, 10, 0.98), rgba(14, 12, 10, 0.85));
-  background-color: rgba(14, 12, 10, 0.92);
+  background-color: var(--c-surface);
   backdrop-filter: blur(10px); /* Floute l'image derrière le texte */
   -webkit-backdrop-filter: blur(10px);
   padding: 2.5rem 2rem;
@@ -607,21 +606,21 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   margin-bottom: 0.6rem;
 }
 
 .personality-info h3 {
   font-family: var(--font-display, serif);
   font-size: 1.5rem;
-  color: #f5f2eb;
+  color: var(--c-cream);
   margin: 0 0 0.2rem 0;
 }
 
 .personality-title {
   font-family: var(--font-body, sans-serif);
   font-size: 0.85rem;
-  color: #8c8275;
+  color: var(--c-text-dim);
   font-style: italic;
   margin-bottom: 1rem;
 }
@@ -629,7 +628,7 @@
 .personality-bio {
   font-family: var(--font-body, sans-serif);
   font-size: 0.88rem;
-  color: #c4bfae;
+  color: var(--c-text);
   line-height: 1.6;
   margin: 0;
 }
@@ -647,9 +646,9 @@
 /* Rotation du "+" pour devenir une croix "×" de fermeture */
 .personality-card.active .reveal-btn {
   transform: rotate(45deg);
-  background-color: #d4af37;
-  color: #0e0c0a;
-  border-color: #d4af37;
+  background-color: var(--c-gold);
+  color: var(--c-bg);
+  border-color: var(--c-gold);
 }
 
 /* Petit effet de zoom sur l'image de fond tant qu'elle n'est pas active */
@@ -658,7 +657,7 @@
 }
 
 .personality-card:hover {
-  border-color: #383126;
+  border-color: var(--c-gold);
 }
 
 /* 📱 RESPONSIVE */
