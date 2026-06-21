@@ -502,3 +502,167 @@
     width: 100%;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+    SECTION : GALERIE INTERACTIVE (IMAGE SEULE + BOUTON REVEAL)
+═══════════════════════════════════════════════════════════════ */
+
+.personalities-section {
+  padding: 6rem 10%;
+  background-color: #0b0908;
+  border-top: 1px solid #1a1713;
+}
+
+.personalities-intro {
+  max-width: 750px;
+  margin: 0 auto 4.5rem auto;
+  text-align: center;
+  font-family: var(--font-body, sans-serif);
+  color: #a69f92;
+}
+
+.personalities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* La Carte devient un bloc à aspect fixe */
+.personality-card {
+  position: relative;
+  background-color: #12100e;
+  border: 1px solid #1f1b16;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4; /* Donne un format portrait de magazine très stable */
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.personality-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── LE BOUTON INTERACTIF (+) ── */
+.reveal-btn {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(14, 12, 10, 0.9);
+  border: 1px solid var(--c-gold, #d4af37);
+  color: var(--c-gold, #d4af37);
+  font-size: 1.6rem;
+  font-weight: 300;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Toujours au-dessus de l'overlay de texte */
+  transition: transform 0.4s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.reveal-btn:hover {
+  background-color: var(--c-gold, #d4af37);
+  color: #0e0c0a;
+}
+
+/* ── L'OVERLAY TEXTE (MASQUÉ AU DÉPART) ── */
+.personality-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-gradient: linear-gradient(to top, rgba(14, 12, 10, 0.98), rgba(14, 12, 10, 0.85));
+  background-color: rgba(14, 12, 10, 0.92);
+  backdrop-filter: blur(10px); /* Floute l'image derrière le texte */
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(100%); /* Dissimulé sous la carte */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.personality-badge {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-gold, #d4af37);
+  margin-bottom: 0.6rem;
+}
+
+.personality-info h3 {
+  font-family: var(--font-display, serif);
+  font-size: 1.5rem;
+  color: #f5f2eb;
+  margin: 0 0 0.2rem 0;
+}
+
+.personality-title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  color: #8c8275;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.personality-bio {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #c4bfae;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    🔥 ÉTATS ACTIFS (DÉLÉGUÉS PAR JAVASCRIPT)
+═══════════════════════════════════════════════════════════════ */
+
+/* Quand la carte a la classe .active, on déploie le texte */
+.personality-card.active .personality-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rotation du "+" pour devenir une croix "×" de fermeture */
+.personality-card.active .reveal-btn {
+  transform: rotate(45deg);
+  background-color: #d4af37;
+  color: #0e0c0a;
+  border-color: #d4af37;
+}
+
+/* Petit effet de zoom sur l'image de fond tant qu'elle n'est pas active */
+.personality-card:not(.active):hover .personality-img {
+  transform: scale(1.05);
+}
+
+.personality-card:hover {
+  border-color: #383126;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .personalities-section { padding: 4rem 5%; }
+  .personality-info { padding: 1.5rem; }
+}
