@@ -670,6 +670,80 @@ revealEls.forEach(el => observer.observe(el));
 
 ---
 
+## 11. Logo du site — Remplacement du symbole ✦
+
+**Objectif** : Remplacer le symbole Unicode "✦" par l'icone SVG officielle du site dans la navbar et le footer.
+
+**Methode** : `<img>` avec CSS `filter` pour adapter la couleur au theme.
+
+**Avant :**
+```html
+<div class="nav-logo">
+  <span class="logo-symbol">✦</span>
+  <span class="logo-text">MBOG</span>
+</div>
+```
+
+**Apres :**
+```html
+<div class="nav-logo">
+  <img src="../assets/icone/icone.svg" alt="Mbog" class="logo-icon">
+  <span class="logo-text">MBOG</span>
+</div>
+```
+
+**CSS — Filtres d'adaptation au theme :**
+```css
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  /* Inversion pour theme sombre (SVG est noir → presque blanc) */
+  filter: invert(0.9) sepia(0.2) saturate(2) hue-rotate(10deg) brightness(1.2);
+}
+[data-theme="light"] .logo-icon {
+  /* Fonce pour theme clair (SVG noir reste visible) */
+  filter: invert(0.15) sepia(0.3) saturate(3) hue-rotate(10deg) brightness(0.8);
+}
+```
+
+**Pourquoi** : Le SVG original est noir (`#000000`). Le filtre `invert(0.9)` le transforme en presque-blanc pour le theme sombre, et `invert(0.15)` le garde fonce pour le theme clair.
+
+---
+
+## 12. Favicon dore — Onglet du navigateur
+
+**Objectif** : Afficher l'icone doree du site dans l'onglet du navigateur.
+
+**Methode** : Deux versions du SVG — une noire (navbar/footer) et une doree (favicon).
+
+**Fichiers SVG :**
+```
+assets/icone/icone.svg       → Noir (#000000) pour navbar + footer
+assets/icone/icone-gold.svg  → Dore (#c9a84c) pour favicon
+```
+
+**Creation de la version doree :**
+```powershell
+# Copie du SVG noir avec remplacement de la couleur
+$content = Get-Content "icone.svg" -Raw
+$gold = $content -replace 'fill="#000000"', 'fill="#c9a84c"'
+Set-Content "icone-gold.svg" -Value $gold
+```
+
+**HTML — Balises favicon dans chaque page :**
+```html
+<head>
+  <link rel="icon" type="image/svg+xml" href="../assets/icone/icone-gold.svg" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="../assets/icone/icone-gold.svg" width="64" height="64">
+  ...
+</head>
+```
+
+**Pourquoi deux versions** : Les favicons ne supportent pas les filtres CSS. La version doree (`#c9a84c`) est un SVG separe utilise uniquement pour l'onglet du navigateur. Le navbar/footer utilisent le SVG noir avec les filtres CSS.
+
+---
+
 ## Recapitulatif
 
 | # | Amelioration | Fichiers | Technique cles |
@@ -684,3 +758,5 @@ revealEls.forEach(el => observer.observe(el));
 | 8 | Theme | `css/style.css`, `js/theme.js` | `data-theme` + custom properties |
 | 9 | Scroll anim | `js/main.js`, `css/style.css` | `IntersectionObserver` |
 | 10 | Vagues footer | `pages/*.html` | SVG inline + `@keyframes` sur `d` |
+| 11 | Logo du site | `pages/*.html`, `css/style.css` | `<img>` SVG + CSS `filter` |
+| 12 | Favicon dore | `assets/icone/icone-gold.svg`, `pages/*.html` | SVG colore + `<link rel="icon">` |

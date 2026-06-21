@@ -1,95 +1,176 @@
-# MBOG — Le Peuple Bassa
+<div align="center">
 
-> Portail culturel dédié à la préservation et à la transmission du patrimoine du peuple Bassa du Cameroun.
+<img src="assets/icone/icone-gold.svg" alt="Mbog" width="80">
 
-## Présentation
+# MBOG
 
-**MBOG** est un site web éducatif et culturel qui explore les cinq piliers de la civilisation Bassa : les origines, la société et traditions, l'art, la gastronomie, et la langue & littérature. Ce projet a pour mission de **préserver, transmettre et célébrer** l'héritage millénaire d'un peuple ancré dans la forêt équatoriale du Littoral camerounais.
+### Le Portail Culturel du Peuple Bassa
 
-Le site se veut une archive vivante, accessible à tous — diaspora, chercheurs, étudiants et curieux souhaitant comprendre la richesse d'un peuple dont l'âme est profondément enracinée dans les rites, la parole et l'ancêtre.
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](#)
 
-## Pages
+> *Preserver. Transmettre. Celebrer.*
 
-| Page | Contenu |
-|------|---------|
-| **Accueil** (`pages/index.html`) | Page d'accueil avec grille hexagonale de navigation, section actualités et festivals, et mission du projet |
-| **Origines** (`pages/histoire.html`) | Fresque des migrations (Égypte antique → Afrique centrale), la légende de Ngog Lituba, carte interactive du territoire historique |
-| **Société & Traditions** (`pages/societe.html`) | Organisation sociale (Mbog, Mbombog, clans, initiation), symboles traditionnels (tenues, objets de pouvoir), rite du Likile (mariage) |
-| **Art** (`pages/art.html`) | Musique (Assiko, Hongo, Mandjang), instruments sacrés (Balafon, Tam-Tam, Hilun hi kôba), danses traditionnelles, festivals (NSA'A, Mbog Liaa, Jè Wèm) |
-| **Gastronomie** (`pages/gastronomie.html`) | Plats traditionnels avec recettes : Okok, Ndolè, Mbongo'o, met de pistaches, escargots, Mbaafon, Nsugi, Mintoumba |
-| **Langue & Littérature** (`pages/langue.html`) | Lexique de base, alphabet interactif, figures littéraires (Werewere Liking, Achille Mbembe, etc.), proverbes Bassa |
+</div>
 
-## Fonctionnalités
+---
 
-- **Thème sombre / clair** — basculement fluide avec effet glassmorphism et adaptation complète de la palette
-- **Navigation responsive** — barre supérieure sur desktop, barre inférieure à icônes sur mobile (≤768px)
-- **Animations au défilement** — effets de révélation via IntersectionObserver
-- **Carte interactive** — Leaflet.js pour localiser le territoire historique Bassa (page Origines)
-- **Carrousel gastronomique** — slider horizontal des plats emblématiques
-- **Alphabet interactif** — survol des lettres pour découvrir la phonétique Bassa
-- **Cartes à retourner** — proverbes Bassa avec recto (en langue) / verso (traduction)
-- **Footer animé** — vagues SVG animées en CSS sur toutes les pages
+## A propos
+
+**MBOG** est un site web immersif et educatif dedie a la preservation et a la transmission du patrimoine culturel du peuple **Bassa** du Cameroun. Le projet explore les cinq piliers de la civilisation Bassa a travers une experience web moderne, responsive et riche en contenu.
+
+Ce site est une archive vivante — accessible a tous : diaspora, chercheurs, etudiants et tous ceux qui souhaitent comprendre la richesse d'un peuple dont l'ame est profondement enracinee dans la forêt, les rites, la parole et l'ancetre.
+
+---
+
+## Piliers du contenu
+
+| # | Pilier | Page | Contenu |
+|---|--------|------|---------|
+| 01 | **Origines** | `histoire.html` | Fresque des migrations (Egypte → Douala), legende de Ngog Lituba, carte interactive Leaflet du territoire historique |
+| 02 | **Societe & Traditions** | `societe.html` | Organisation sociale (Mbog, Mbombog, clans), symboles traditionnels, rite matrimonial du Likile |
+| 03 | **Art** | `art.html` | Musique (Assiko, Hongo, Mandjang), instruments sacres (Balafon, Tam-Tam, Hilun hi koba), danses, festivals |
+| 04 | **Gastronomie** | `gastronomie.html` | Plats ancestraux avec recettes detaillees : Okok, Ndoie, Mbongo'o, Mintoumba, Nsugi... |
+| 05 | **Langue & Litterature** | `langue.html` | Alphabet interactif, lexique, figures litteraires (Werewere Liking, Achille Mbembe...), proverbes traduits |
+
+---
+
+## Fonctionnalites
+
+| Fonctionnalite | Description |
+|----------------|-------------|
+| **Theme sombre / clair** | Basculement fluide avec toggle glassmorphism, adaptation complete de la palette via CSS custom properties |
+| **Navigation responsive** | Navbar fixe desktop + barre inferieure a icones sur mobile (<=768px) |
+| **Ambiance sonore** | Widget audio flottant avec son Assiko en boucle + coup de tambour au changement de page |
+| **Persistance audio** | La musique continue entre les pages via `localStorage` (etat play/pause/volume/position) |
+| **Decorations SVG** | 4 feuilles de palmier realesites en fond de page, adaptees au theme, masquees derriere le hero |
+| **Animations au scroll** | Reveal progressif via `IntersectionObserver` avec cascade |
+| **Carte interactive** | Leaflet.js pour localiser le territoire historique Bassa |
+| **Carrousel gastronomique** | Slider horizontal des plats traditionnels |
+| **Alphabet interactif** | Tooltips phonétiques au survol de chaque lettre de l'alphabet Bassa |
+| **Cartes a retourner** | Proverbes Bassa avec recto (langue) / verso (traduction) |
+| **Footer anime** | Vagues SVG animees en CSS sur toutes les pages |
+| **Favicon dore** | Icone SVG doree dans l'onglet du navigateur |
+| **Transitions de pages** | Animation push via API CSS `@view-transition` |
+
+---
 
 ## Stack technique
 
-| Technologie | Usage |
-|-------------|-------|
-| **HTML5** | Structure sémantique des 6 pages |
-| **CSS3** | Styles avec variables custom, clip-path, animations, responsive design |
-| **JavaScript** | Vanilla JS — navbar, thème, IntersectionObserver, carrousel, flip cards |
-| **Google Fonts** | Cinzel (titres), Cormorant Garamond (corps), Barlow Condensed (labels UI) |
-| **Leaflet.js 1.9.4** | Carte interactive (page Origines uniquement) |
+### Frontend
 
-Aucun framework, aucune dépendance de build, aucun bundler. Le site s'exécute directement dans le navigateur.
+| Technologie | Version | Usage |
+|-------------|---------|-------|
+| HTML5 | — | Structure semantique des 6 pages |
+| CSS3 | — | Custom properties, clip-path, animations, responsive, glassmorphism |
+| JavaScript | ES6+ | Vanilla JS — navbar, theme, IntersectionObserver, carrousel, flip cards, audio |
+| Leaflet.js | 1.9.4 | Carte interactive (page Origines) |
+
+### Systemes implementes
+
+| Systeme | Methode |
+|---------|---------|
+| **Theme clair/sombre** | `data-theme` sur `<html>` + CSS custom properties |
+| **Ambiance sonore** | `HTML5 Audio` + bouton flottant glassmorphism |
+| **Persistance audio** | `localStorage` (sauvegarde play/pause/volume/position) |
+| **Decorations SVG** | Feuilles de palmier inline avec gradients CSS adaptables |
+| **Transitions pages** | API CSS `@view-transition` native |
+| **Scroll animations** | `IntersectionObserver` avec threshold 15% |
+| **Favicon** | SVG colore (`#c9a84c`) via `<link rel="icon">` |
+
+### Typographie
+
+| Police | Usage |
+|--------|-------|
+| **Cinzel** | Titres et en-tetes (style serif elegant) |
+| **Cormorant Garamond** | Corps de texte (style literaire) |
+| **Barlow Condensed** | Labels UI, navigation, badges (style condense) |
+
+> **100% vanilla** — aucun framework CSS/JS, aucun bundler, aucune dependance npm.
+
+---
 
 ## Installation
 
-Clonez le dépôt et ouvrez le fichier `pages/index.html` dans un navigateur :
-
 ```bash
+# Cloner le depot
 git clone https://github.com/votre-username/bassa-cult.git
+
+# Entrer dans le dossier
 cd bassa-cult
+
+# Ouvrir dans le navigateur (Windows)
+start pages/index.html
 ```
 
-Puis ouvrez `pages/index.html` dans votre navigateur préféré.
+> **Note** : La carte interactive (Leaflet.js) necessite une connexion Internet. Les sons d'ambiance necessitent les fichiers audio dans `assets/audio/`.
 
-> **Note** : La carte interactive (Leaflet.js) nécessite une connexion Internet.
+---
 
 ## Structure du projet
 
 ```
 bassa-cult/
 ├── pages/
-│   ├── index.html          # Page d'accueil
-│   ├── histoire.html       # Origines & histoire
-│   ├── societe.html        # Société & traditions
-│   ├── art.html            # Art, musique & danses
-│   ├── gastronomie.html    # Gastronomie traditionnelle
-│   └── langue.html         # Langue & littérature
+│   ├── index.html              # Accueil
+│   ├── histoire.html           # Origines
+│   ├── societe.html            # Societe & Traditions
+│   ├── art.html                # Art
+│   ├── gastronomie.html        # Gastronomie
+│   └── langue.html             # Langue & Litterature
 ├── css/
-│   ├── style.css           # Styles principaux (palette, navbar, hero, hex, footer)
-│   ├── transition.css      # Styles de transition entre pages
-│   ├── histoire.css        # Styles spécifiques à la page Origines
-│   ├── societe.css         # Styles spécifiques à la page Société
-│   ├── art.css             # Styles spécifiques à la page Art
-│   ├── gastro.css          # Styles spécifiques à la page Gastronomie
-│   └── langue.css          # Styles spécifiques à la page Langue
+│   ├── style.css               # Styles principaux + variables theme + palms
+│   ├── transition.css          # Transitions @view-transition
+│   ├── audio.css               # Widget audio flottant
+│   ├── histoire.css            # Page Origines
+│   ├── societe.css             # Page Societe
+│   ├── art.css                 # Page Art
+│   ├── gastro.css              # Page Gastronomie
+│   └── langue.css              # Page Langue
 ├── js/
-│   ├── main.js             # Navbar scroll, animations reveal
-│   ├── theme.js            # Gestion du thème sombre/clair
-│   ├── map.js              # Initialisation Leaflet.js
-│   ├── sanaga.js           # Script pour la page Origines
-│   ├── grotte.js           # Script pour la grotte de Ngog Lituba
-│   ├── gastro-carousel.js  # Carrousel gastronomique
-│   ├── recette.js          # Affichage des recettes
-│   └── langue-proverbe.js  # Flip cards des proverbes
+│   ├── main.js                 # Navbar, scroll reveal
+│   ├── theme.js                # Basculement sombre/clair
+│   ├── audio.js                # Ambiance sonore + persistance
+│   ├── map.js                  # Leaflet.js
+│   ├── sanaga.js               # Riviere Sanaga
+│   ├── grotte.js               # Grotte Ngog Lituba
+│   ├── gastro-carousel.js      # Carrousel gastronomique
+│   ├── recette.js              # Modal recettes
+│   └── langue-proverbe.js      # Flip cards proverbes
 ├── assets/
-│   ├── images/             # Photographies et illustrations
-│   └── videos/             # Vidéos (danse Assiko)
-├── LICENSE                 # Licence MIT
-└── README.md               # Ce fichier
+│   ├── icone/
+│   │   ├── icone.svg           # Logo du site (noir)
+│   │   └── icone-gold.svg      # Logo dore (favicon)
+│   ├── audio/
+│   │   ├── ambiance.m4a        # Son Assiko (boucle)
+│   │   └── dum.m4a             # Coup de tambour (transition)
+│   ├── images/                 # Photographies & illustrations
+│   └── videos/                 # Video danse Assiko
+├── LICENSE                     # MIT
+└── README.md
 ```
+
+---
+
+## Auteur
+
+**Dikoume Stephane** — Developpeur Web
+
+---
 
 ## Licence
 
-Ce projet est distribué sous la [Licence MIT](LICENSE) — Copyright (c) 2026 dikoume stephane.
+Ce projet est sous licence **MIT** — voir le fichier [LICENSE](LICENSE) pour plus de details.
+
+---
+
+<div align="center">
+
+*Site dedie a perpetuer la grandeur du patrimoine bassa*
+
+**© 2026 Mbog — Peuple Bassa. Tous droits reserves.**
+
+</div>

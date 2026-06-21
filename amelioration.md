@@ -4,7 +4,7 @@ Propositions pour renforcer le caracteres culturel et dynamique du site, sans to
 
 ---
 
-## 1. Ambiance Sonore Culturelle
+## 1. Ambiance Sonore Culturelle ✅
 
 - **Barre de volume flottante** en bas a droite pour activer/desactiver les sons d'ambiance (rythme Assiko lointain, chants traditionnels, bruits de foret equatoriale).
 - **Son de notification culturel** a chaque changement de page : un court son de tambour ou de balafon comme transition auditive.
@@ -124,6 +124,29 @@ Propositions pour renforcer le caracteres culturel et dynamique du site, sans to
 - **Boutons de partage** sur chaque proverbe, recette et figure litteraire.
 - **Carte de voeux partageable** : un generateur de cartes avec un proverbe Bassa et le logo MBOG, a partager sur WhatsApp/Instagram.
 - **Hashtag culturel** : #MbogBassa #PeupleBassa pour rassembler les publications de la diaspora.
+
+---
+
+## 14. Reseaux Sociaux et Partage
+
+- **Boutons de partage** sur chaque proverbe, recette et figure litteraire.
+- **Carte de voeux partageable** : un generateur de cartes avec un proverbe Bassa et le logo MBOG, a partager sur WhatsApp/Instagram.
+- **Hashtag culturel** : #MbogBassa #PeupleBassa pour rassembler les publications de la diaspora.
+
+---
+
+## 15. Logo et Favicon du site ✅
+
+- **Remplacement du symbole ✦** par l'icone SVG officielle du site dans la navbar et le footer de toutes les pages.
+- **Favicon dore** dans l'onglet du navigateur : copie doree de l'icone (`icone-gold.svg`) uniquement pour le favicon, l'icone noire avec filtres CSS etant utilisee pour le navbar/footer.
+
+---
+
+## 16. Feuilles de palmier SVG ✅
+
+- **Decoration culturelle** : 4 feuilles de palmier SVG realesites en fond de page, positionnees strategiquement (haut droite, bas gauche, milieu gauche, haut gauche).
+- **Adaptation au theme** : les couleurs changent automatiquement entre mode sombre (verts foncees) et mode clair (verts pastel) via CSS variables.
+- **Masquage derriere le hero** : les feuilles ne s'affichent pas sur le hero ni les images grace a un z-index difference.
 
 ---
 
