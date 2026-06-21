@@ -1,0 +1,582 @@
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 1 : ART MUSICAL & INSTRUMENTS
+═══════════════════════════════════════════════════════════════ */
+
+.art-musical-section {
+  padding: 6rem 10%;
+  background-color: #0e0c0a;
+  color: #f5f2eb;
+}
+
+.art-intro-box {
+  max-width: 850px;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
+.art-blockquote {
+  font-family: var(--font-display, serif);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--c-gold, #d4af37);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.art-intro-box p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.05rem;
+  color: #c4bfae;
+  line-height: 1.7;
+}
+
+.art-subcategory {
+  margin-bottom: 5rem;
+}
+
+.art-sub-title {
+  font-family: var(--font-display, serif);
+  font-size: 1.8rem;
+  color: #f5f2eb;
+  margin-bottom: 2.5rem;
+  border-left: 3px solid var(--c-gold, #d4af37);
+  padding-left: 1rem;
+}
+
+/* ── GRILLE DES GENRES MUSICAUX (CARTES AVEC IMAGES) ── */
+.art-music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.music-card {
+  background-color: #14120f;
+  border: 1px solid #24201a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Coupe l'image selon les bords arrondis */
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.music-img-wrapper {
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  background-color: #1a1713;
+}
+
+.music-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(90%);
+}
+
+.music-card-content {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.music-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.music-icon { font-size: 1.2rem; }
+
+.music-card h4 {
+  font-family: var(--font-display, serif);
+  font-size: 1.35rem;
+  color: #f5f2eb;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.music-card p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  color: #a69f92;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hover Genres */
+.music-card:hover {
+  border-color: var(--c-gold, #d4af37);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.music-card:hover .music-img {
+  transform: scale(1.05);
+  filter: brightness(100%);
+}
+
+.music-card:hover h4 {
+  color: var(--c-gold, #d4af37);
+}
+
+/* ── DISPOSITION DES INSTRUMENTS CLASSIQUES ── */
+.instruments-layout {
+  display: flex;
+  gap: 3rem;
+}
+
+.instruments-list {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Mini-cartes instruments horizontales */
+.instrument-card {
+  display: flex;
+  background-color: #110f0d;
+  border-radius: 6px;
+  border: 1px solid #1f1b16;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.instru-img-wrapper {
+  width: 35%;
+  min-width: 130px;
+  overflow: hidden;
+  background-color: #1a1713;
+}
+
+.instru-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.instru-content {
+  padding: 1.5rem;
+  width: 65%;
+}
+
+.instrument-card h5 {
+  font-family: var(--font-display, serif);
+  font-size: 1.2rem;
+  color: var(--c-gold, #d4af37);
+  margin: 0 0 0.6rem 0;
+}
+
+.instrument-card p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #c4bfae;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.instrument-card:hover {
+  border-color: var(--c-gold, #d4af37);
+}
+
+.instrument-card:hover .instru-img {
+  transform: scale(1.04);
+}
+
+/* ── FOCUS BOX DU HILUN HI KÔBA ── */
+.hilun-focus-box {
+  width: 50%;
+  background-color: #14120f;
+  border: 1px solid #24201a;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hilun-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.hilun-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+.hilun-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  background-color: #0e0c0a;
+  border: 1px solid var(--c-gold, #d4af37);
+  color: var(--c-gold, #d4af37);
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+}
+
+.hilun-text-content {
+  padding: 2.5rem;
+}
+
+.hilun-focus-box h4 {
+  font-family: var(--font-display, serif);
+  font-size: 1.5rem;
+  color: #f5f2eb;
+  margin: 0 0 0.4rem 0;
+}
+
+.hilun-history {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  color: var(--c-gold, #d4af37);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.hilun-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.92rem;
+  color: #c4bfae;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hilun-spiritual-note {
+  border-top: 1px dashed #3a3329;
+  padding-top: 1.5rem;
+}
+
+.hilun-spiritual-note h5 {
+  font-family: var(--font-display, serif);
+  font-size: 1.1rem;
+  color: #f5f2eb;
+  margin: 0 0 0.5rem 0;
+}
+
+.hilun-spiritual-note p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #a69f92;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 992px) {
+  .art-musical-section { padding: 4rem 5%; }
+  
+  .instruments-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .instruments-list, .hilun-focus-box { width: 100%; }
+  
+  .instrument-card { flex-direction: column; }
+  .instru-img-wrapper { width: 100%; height: 150px; }
+  .instru-content { width: 100%; padding: 1.5rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 3 : LES DANSES TRADITIONNELLES (STYLE TEXTE CADENCÉ)
+═══════════════════════════════════════════════════════════════ */
+
+.art-danses-section {
+  padding: 6rem 10%;
+  background-color: #0e0c0a;
+  border-top: 1px solid #1f1b16;
+}
+
+.danses-intro {
+  max-width: 800px;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
+.danses-blockquote {
+  font-family: var(--font-display, serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--c-gold, #d4af37);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.danses-intro p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.05rem;
+  color: #a69f92;
+  line-height: 1.7;
+}
+
+/* ── DISPOSITION DES CARTES DE DANSE (STAGGERED / EN DÉCALÉ) ── */
+.danses-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.danse-card {
+  background-color: #14120f;
+  border: 1px solid #211d17;
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+/* En-tête interne de la carte */
+.danse-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Grand numéro stylisé */
+.danse-number {
+  font-family: var(--font-display, serif);
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: rgba(212, 175, 55, 0.05); /* Filigrane très subtil */
+  line-height: 1;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+}
+
+.danse-tag {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--c-gold, #d4af37);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding-bottom: 0.3rem;
+}
+
+.danse-card h3 {
+  font-family: var(--font-display, serif);
+  font-size: 1.7rem;
+  color: #f5f2eb;
+  margin: 0 0 0.4rem 0;
+}
+
+.danse-history {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.88rem;
+  color: #8c8275;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.danse-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.93rem;
+  color: #c4bfae;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 🔥 EFFETS DYNAMIQUES AU SURVOL */
+.danse-card:hover {
+  border-color: var(--c-gold, #d4af37);
+  transform: translateY(-5px);
+}
+
+.danse-card:hover .danse-number {
+  color: rgba(212, 175, 55, 0.12); /* Le numéro s'illumine légèrement */
+  transform: scale(1.05);
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* 📱 ADAPTATION MOBILE */
+@media (max-width: 768px) {
+  .art-danses-section {
+    padding: 4rem 5%;
+  }
+  
+  .danse-card {
+    padding: 2rem;
+  }
+  
+  .danse-number {
+    font-size: 2.5rem;
+    top: 1rem;
+    right: 1.5rem;
+  }
+  
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 4 : STYLE DE L'AGENDA DES FESTIVALS CULTURELS
+═══════════════════════════════════════════════════════════════ */
+
+.festivals-section {
+  padding: 6rem 10%;
+  background-color: #0e0c0a;
+  border-top: 1px solid #1a1713;
+}
+
+.festivals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem; /* Grand espace entre les blocs de festival */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* La Carte Festival (Disposition Horizontale par défaut) */
+.festival-card {
+  display: flex;
+  background-color: #14120f;
+  border: 1px solid #24201a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Bannière Image du Festival */
+.festival-img-banner {
+  position: relative;
+  width: 35%; /* Prend un peu plus du tiers de la carte */
+  min-width: 280px;
+  overflow: hidden;
+}
+
+.festival-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Badge doré sur l'image */
+.festival-badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background-color: rgba(20, 18, 15, 0.85);
+  border: 1px solid var(--c-gold, #d4af37);
+  color: var(--c-gold, #d4af37);
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* Zone des détails textuels */
+.festival-details {
+  padding: 2.5rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.festival-scope {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--c-gold, #d4af37);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.festival-details h3 {
+  font-family: var(--font-display, serif);
+  font-size: 1.7rem;
+  color: #f5f2eb;
+  margin: 0 0 1rem 0;
+}
+
+.festival-desc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  color: #c4bfae;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+/* Pied de la carte festival */
+.festival-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #24201a;
+}
+
+.festival-meta {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  color: #8c8275;
+}
+
+.festival-meta strong {
+  color: #c4bfae;
+}
+
+/* 🔥 ACTIONS AU SURVOL */
+.festival-card:hover {
+  border-color: var(--c-gold, #d4af37);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.festival-card:hover .festival-img {
+  transform: scale(1.05);
+}
+
+/* 📱 DISPOSITION MOBILE (On empile verticalement) */
+@media (max-width: 850px) {
+  .festivals-section {
+    padding: 4rem 5%;
+  }
+  
+  .festival-card {
+    flex-direction: column; /* L'image passe au-dessus du texte */
+  }
+  
+  .festival-img-banner {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .festival-details {
+    width: 100%;
+    padding: 1.8rem;
+  }
+  
+  .festival-footer {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
