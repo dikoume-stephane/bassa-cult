@@ -1,11 +1,55 @@
+.hero-bg-a {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/guitar-island.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  /* Fallback si l'image n'est pas encore disponible */
+  background-color: #1a2a1c;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12); }
+}
+
+.hero-bg-a::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('../assets/images/festivals/mbog-lia\'a.jpg');
+  background-color: #a5aba6;
+  background-size: cover;
+  background-position: center 40%;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 1;
+
+}
+
+[data-theme="light"] .hero-bg-a::after {
+  opacity: 1;
+}
+
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--c-cream);
+  margin: 0 0 2rem 0;
+}
+
+
 /* ═══════════════════════════════════════════════════════════════
     SECTION 1 : ART MUSICAL & INSTRUMENTS
 ═══════════════════════════════════════════════════════════════ */
 
 .art-musical-section {
   padding: 6rem 10%;
-  background-color: #0e0c0a;
-  color: #f5f2eb;
+  background-color: var(--c-surface2);
+  color: var(--c-col);
 }
 
 .art-intro-box {
@@ -15,18 +59,18 @@
 }
 
 .art-blockquote {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.6rem;
   font-style: italic;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
 .art-intro-box p {
-  font-family: var(--font-body, sans-serif);
-  font-size: 1.05rem;
-  color: #c4bfae;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--c-text);
   line-height: 1.7;
 }
 
@@ -35,11 +79,11 @@
 }
 
 .art-sub-title {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.8rem;
-  color: #f5f2eb;
+  color: var(--c-cream);
   margin-bottom: 2.5rem;
-  border-left: 3px solid var(--c-gold, #d4af37);
+  border-left: 3px solid var(--c-gold);
   padding-left: 1rem;
 }
 
@@ -51,7 +95,7 @@
 }
 
 .music-card {
-  background-color: #14120f;
+  background-color: var(--c-surface);
   border: 1px solid #24201a;
   border-radius: 8px;
   display: flex;
@@ -64,7 +108,7 @@
   width: 100%;
   height: 170px;
   overflow: hidden;
-  background-color: #1a1713;
+  background-color: var(--c-surface);
 }
 
 .music-img {
@@ -92,24 +136,24 @@
 .music-icon { font-size: 1.2rem; }
 
 .music-card h4 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.35rem;
-  color: #f5f2eb;
+  color: var(--c-col);
   margin: 0;
   transition: color 0.3s ease;
 }
 
 .music-card p {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.9rem;
-  color: #a69f92;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-text);
   line-height: 1.6;
   margin: 0;
 }
 
 /* Hover Genres */
 .music-card:hover {
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
@@ -120,7 +164,7 @@
 }
 
 .music-card:hover h4 {
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
 }
 
 /* ── DISPOSITION DES INSTRUMENTS CLASSIQUES ── */
@@ -139,7 +183,7 @@
 /* Mini-cartes instruments horizontales */
 .instrument-card {
   display: flex;
-  background-color: #110f0d;
+  background-color:var(--c-surface);
   border-radius: 6px;
   border: 1px solid #1f1b16;
   overflow: hidden;
@@ -150,7 +194,7 @@
   width: 35%;
   min-width: 130px;
   overflow: hidden;
-  background-color: #1a1713;
+  background-color: var(--c-surface2);
 }
 
 .instru-img {
@@ -166,22 +210,22 @@
 }
 
 .instrument-card h5 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.2rem;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   margin: 0 0 0.6rem 0;
 }
 
 .instrument-card p {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #c4bfae;
+  color: var(--c-text);
   line-height: 1.5;
   margin: 0;
 }
 
 .instrument-card:hover {
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
 }
 
 .instrument-card:hover .instru-img {
@@ -191,7 +235,7 @@
 /* ── FOCUS BOX DU HILUN HI KÔBA ── */
 .hilun-focus-box {
   width: 50%;
-  background-color: #14120f;
+  background-color: var(--c-surface);
   border: 1px solid #24201a;
   border-radius: 8px;
   overflow: hidden;
@@ -218,10 +262,10 @@
   position: absolute;
   bottom: 1rem;
   right: 1.5rem;
-  background-color: #0e0c0a;
-  border: 1px solid var(--c-gold, #d4af37);
-  color: var(--c-gold, #d4af37);
-  font-family: var(--font-body, sans-serif);
+  background-color: var(--c-surface2);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
+  font-family: var(--font-body);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -235,25 +279,25 @@
 }
 
 .hilun-focus-box h4 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  color: #f5f2eb;
+  color: var(--c-col);
   margin: 0 0 0.4rem 0;
 }
 
 .hilun-history {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
 }
 
 .hilun-desc {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.92rem;
-  color: #c4bfae;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-text);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -264,16 +308,16 @@
 }
 
 .hilun-spiritual-note h5 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.1rem;
-  color: #f5f2eb;
+  color: var(--c-col);
   margin: 0 0 0.5rem 0;
 }
 
 .hilun-spiritual-note p {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #a69f92;
+  color: var(--c-text);
   line-height: 1.5;
   margin: 0;
 }
@@ -300,8 +344,8 @@
 
 .art-danses-section {
   padding: 6rem 10%;
-  background-color: #0e0c0a;
-  border-top: 1px solid #1f1b16;
+  background-color: var(--c-surface2);
+  border-top: none;
 }
 
 .danses-intro {
@@ -311,18 +355,18 @@
 }
 
 .danses-blockquote {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.5rem;
   font-style: italic;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
 .danses-intro p {
-  font-family: var(--font-body, sans-serif);
-  font-size: 1.05rem;
-  color: #a69f92;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--c-text);
   line-height: 1.7;
 }
 
@@ -336,7 +380,7 @@
 }
 
 .danse-card {
-  background-color: #14120f;
+  background-color: var(--c-surface);
   border: 1px solid #211d17;
   padding: 3rem 2.5rem;
   border-radius: 8px;
@@ -357,10 +401,10 @@
 
 /* Grand numéro stylisé */
 .danse-number {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 3.5rem;
   font-weight: bold;
-  color: rgba(212, 175, 55, 0.05); /* Filigrane très subtil */
+  color: var(--c-text-dim); /* Filigrane très subtil */
   line-height: 1;
   position: absolute;
   top: 1.5rem;
@@ -368,42 +412,42 @@
 }
 
 .danse-tag {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   font-weight: 600;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   padding-bottom: 0.3rem;
 }
 
 .danse-card h3 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.7rem;
-  color: #f5f2eb;
+  color: var(--c-cream);
   margin: 0 0 0.4rem 0;
 }
 
 .danse-history {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.88rem;
-  color: #8c8275;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--c-text-dim);
   font-style: italic;
   margin-bottom: 1.5rem;
 }
 
 .danse-desc {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.93rem;
-  color: #c4bfae;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--c-text);
   line-height: 1.6;
   margin: 0;
 }
 
 /* 🔥 EFFETS DYNAMIQUES AU SURVOL */
 .danse-card:hover {
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
   transform: translateY(-5px);
 }
 
@@ -437,8 +481,8 @@
 
 .festivals-section {
   padding: 6rem 10%;
-  background-color: #0e0c0a;
-  border-top: 1px solid #1a1713;
+  background-color:var(--c-surface2);
+  border-top: none;
 }
 
 .festivals-container {
@@ -452,7 +496,7 @@
 /* La Carte Festival (Disposition Horizontale par défaut) */
 .festival-card {
   display: flex;
-  background-color: #14120f;
+  background-color: var(--c-surface);
   border: 1px solid #24201a;
   border-radius: 8px;
   overflow: hidden;
@@ -479,11 +523,11 @@
   position: absolute;
   top: 1.2rem;
   left: 1.2rem;
-  background-color: rgba(20, 18, 15, 0.85);
-  border: 1px solid var(--c-gold, #d4af37);
-  color: var(--c-gold, #d4af37);
+  background-color: var(--c-surface2);
+  border: 1px solid var(--c-gold);
+  color: var(--c-gold);
   padding: 0.4rem 0.8rem;
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -494,7 +538,7 @@
 
 /* Zone des détails textuels */
 .festival-details {
-  padding: 2.5rem;
+  padding: 2.7rem;
   width: 65%;
   display: flex;
   flex-direction: column;
@@ -502,26 +546,26 @@
 }
 
 .festival-scope {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .festival-details h3 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display   );
   font-size: 1.7rem;
-  color: #f5f2eb;
+  color: var(--c-cream);
   margin: 0 0 1rem 0;
 }
 
 .festival-desc {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  color: #c4bfae;
+  color: var(--c-text);
   line-height: 1.6;
   margin: 0 0 2rem 0;
 }
@@ -536,18 +580,18 @@
 }
 
 .festival-meta {
-  font-family: var(--font-body, sans-serif);
-  font-size: 0.85rem;
-  color: #8c8275;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--c-text-dim);
 }
 
 .festival-meta strong {
-  color: #c4bfae;
+  color: var(--c-text);
 }
 
 /* 🔥 ACTIONS AU SURVOL */
 .festival-card:hover {
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
