@@ -6,7 +6,7 @@
 
   // ── Chemins des fichiers audio ────────────────────────
   const AMBIENT_SRC = '../assets/audio/ambiance.m4a';
-  const DRUM_SRC    = '../assets/audio/drum.m4a';
+  const DRUM_SRC    = '../assets/audio/dum.m4a';
 
   // ── Etat ──────────────────────────────────────────────
   let ambientAudio = null;
