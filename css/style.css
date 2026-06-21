@@ -13,6 +13,7 @@
   --c-gold-light: #e2c97e;
   --c-earth:      #8b5e3c;
   --c-forest:     #2d4a2f;
+  --c-col:        #fcfcfc;
   --c-cream:      #f2ead8;
   --c-text:       #d4c9b0;
   --c-text-dim:   #7a6e5a;
@@ -29,8 +30,6 @@
   --nav-h: 72px;
   --transition: 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-  /* --- AJOUT : Image Hero par défaut (Forêt - Mode Sombre) --- */
-  --bg-hero-image: url('../assets/images/hero-forest.jpg');
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -47,13 +46,13 @@
   /* Or et Accents (Assombris pour garantir un excellent contraste sur fond clair) */
   --c-gold:       #8C620B;
   --c-gold-light: #A67C1E;
+  --c-col:  #121111; /* Accent principal pour les éléments interactifs */
 
   /* Textes et Titres (Inversion pour lisibilité sur fond clair) */
   --c-cream:      #edb356; /* Devient Ébène clair pour les grands titres */
   --c-text:       #2A241C; /* Texte principal sombre et doux */
   --c-text-dim:   #615645; /* Texte secondaire légèrement atténué */
 
-  --bg-hero-image: url('../assets/images/hero-sanaga.jpg');
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -372,7 +371,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/foret4.jpg');
+  background-image: url('../assets/images/La_palmeraie_Oméga_farm_de_Ndanga_Cameroun.jpg');
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -390,7 +389,7 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-image: url('../assets/images/foret2.jpg');
+  background-image: url('../assets/images/sanagaaa.jpg');
   background-color: #a5aba6;
   background-size: cover;
   background-position: center 40%;

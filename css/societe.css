@@ -1,10 +1,54 @@
+
+.hero-bg-s {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/quii.png');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  /* Fallback si l'image n'est pas encore disponible */
+  background-color: #1a2a1c;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12); }
+}
+
+.hero-bg-s::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('../assets/images/hex-societé.webp');
+  background-color: #a5aba6;
+  background-size: cover;
+  background-position: center 40%;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 1;
+
+}
+
+[data-theme="light"] .hero-bg-s::after {
+  opacity: 1;
+}
+
+
 /* ═══════════════════════════════════════════════════════════════
     SECTION 1 : SOCIÉTÉ & TRADITIONS - DESIGN DES PILIERS
 ═══════════════════════════════════════════════════════════════ */
 
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--c-cream);
+  margin: 0 0 2rem 0;
+}
+
 .societe-section {
   padding: 5rem 10%;
-  background-color: #0e0c0a;
+  background-color: var(--c-surface2);
 }
 
 .societe-intro {
@@ -16,7 +60,7 @@
 .societe-intro p {
   font-family: var(--font-body, sans-serif);
   font-size: 1.15rem;
-  color: #c4bfae;
+  color: var(--c-text);
   line-height: 1.7;
 }
 
@@ -29,7 +73,7 @@
 
 /* Modification de la Carte pour accueillir l'image */
 .pillar-card {
-  background-color: #14120f;
+  background-color: var(--c-surface);
   border: 1px solid #24201a;
   padding: 0; /* On retire le padding global pour coller l'image aux bords */
   border-radius: 8px;
@@ -44,7 +88,7 @@
   width: 100%;
   height: 200px; /* Hauteur fixe idéale pour garder l'alignement des grilles */
   overflow: hidden;
-  background-color: #24201a; /* Fond neutre en attendant le chargement de l'image */
+  background-color: var(--c-col); /* Fond neutre en attendant le chargement de l'image */
 }
 
 .pillar-img {
@@ -65,7 +109,7 @@
 /* 🔥 EFFETS AU SURVOL DE LA CARTE */
 .pillar-card:hover {
   transform: translateY(-5px);
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -83,40 +127,40 @@
 }
 
 .pillar-num {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.4rem;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   font-weight: bold;
   opacity: 0.7;
 }
 
 .pillar-card h3 {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  color: #f5f2eb;
+  color: var(--c-col);
   margin: 0;
 }
 
 .pillar-concept {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   margin: 0 0 1.2rem 0;
   font-weight: 600;
 }
 
 .pillar-text {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.92rem;
-  color: #c4bfae;
+  color: var(--c-text);
   line-height: 1.6;
   margin: 0;
 }
 
 .pillar-text strong {
-  color: #f5f2eb;
+  color: var(--c-cream);
   font-weight: 600;
 }
 
@@ -143,17 +187,17 @@
 
 .elements-section {
   padding: 6rem 10%;
-  background-color: #0b0907; /* Légère variation de noir pour couper avec la section 1 */
-  border-top: 1px solid #1a1713;
+  background-color: var(--c-surface2); /* Légère variation de noir pour couper avec la section 1 */
+  border-top: none;
 }
 
 .section-subtitle {
   text-align: center;
   max-width: 700px;
   margin: 0 auto 4rem auto;
-  font-family: var(--font-body, sans-serif);
-  color: #8c8275;
-  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--c-text);
+  font-size: 1.4rem;
   line-height: 1.6;
 }
 
@@ -168,9 +212,9 @@
 
 /* Titre de la sous-catégorie */
 .category-title {
-  font-family: var(--font-display, serif);
+  font-family: var(--font-display);
   font-size: 1.8rem;
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
@@ -185,7 +229,7 @@
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--c-gold, #d4af37);
+  background-color: var(--c-gold);
 }
 
 /* Grille adaptative pour les éléments (plus compacte que la section 1) */
@@ -197,7 +241,7 @@
 
 /* Carte Élément Unique */
 .element-card {
-  background-color: #12100e;
+  background-color: var(--c-surface);
   border: 1px solid #1f1b16;
   border-radius: 6px;
   overflow: hidden;
@@ -209,9 +253,9 @@
 /* Boîte de l'image (Format paysage compact) */
 .element-img-box {
   width: 100%;
-  height: 160px;
+  height: 250px;
   overflow: hidden;
-  background-color: #1a1713;
+  background-color: var(--c-surface2);
   position: relative;
 }
 
@@ -234,22 +278,22 @@
 .element-info h4 {
   font-family: var(--font-display, serif);
   font-size: 1.25rem;
-  color: #f5f2eb;
+  color: var(--c-col);
   margin: 0 0 0.7rem 0;
   transition: color 0.3s ease;
 }
 
 .element-info p {
-  font-family: var(--font-body, sans-serif);
+  font-family: var(--font-body);
   font-size: 0.88rem;
-  color: #a69f92;
+  color: var(--c-text);
   line-height: 1.5;
   margin: 0;
 }
 
 /* 🔥 EFFETS INTERACTIFS AU SURVOL */
 .element-card:hover {
-  border-color: var(--c-gold, #d4af37);
+  border-color: var(--c-gold);
   transform: translateY(-3px);
 }
 
@@ -261,7 +305,7 @@
 
 /* Le titre passe en couleur or au survol */
 .element-card:hover .element-info h4 {
-  color: var(--c-gold, #d4af37);
+  color: var(--c-gold);
 }
 
 /* 📱 ADAPTATION ÉCRANS MOBILES */
@@ -275,5 +319,186 @@
   }
   .category-title {
     font-size: 1.5rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+    SECTION 3 : STYLE DE LA TIMELINE DU MARIAGE (LIKILE)
+═══════════════════════════════════════════════════════════════ */
+
+.rite-section {
+  padding: 6rem 10%;
+  background-color: var(--c-surface2);
+  color: var(--c-col);
+}
+
+/* Zone d'introduction et Citation block */
+.rite-intro-container {
+  max-width: 800px;
+  margin: 0 auto 5rem auto;
+  text-align: center;
+}
+
+.rite-quote {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--c-gold);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.rite-intro-text {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--c-text);
+  line-height: 1.7;
+}
+
+/* ── CONTENEUR PRINCIPAL DE LA FRISE ── */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 6rem auto;
+  padding: 2rem 0;
+}
+
+/* Ligne dorée verticale centrale */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #d4af37 15%, #d4af37 85%, transparent);
+  transform: translateX(-50%);
+}
+
+/* Un bloc d'étape */
+.timeline-item {
+  position: relative;
+  width: 50%; /* Prend la moitié de l'écran */
+  padding: 1.5rem 3rem;
+  box-sizing: border-box;
+}
+
+/* Aligner à gauche et à droite alternativement */
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; text-align: left; }
+
+/* Le petit point d'ancrage sur la ligne dorée */
+.timeline-dot {
+  position: absolute;
+  top: 2.2rem;
+  width: 12px;
+  height: 12px;
+  background-color: var(--c-surface);
+  border: 2px solid var(--c-gold);
+  border-radius: 50%;
+  z-index: 2;
+}
+.timeline-item.left .timeline-dot { right: -7px; }
+.timeline-item.right .timeline-dot { left: -5px; }
+
+/* Boîte de texte interne à chaque étape */
+.timeline-content {
+  background-color: var(--c-surface);
+  border: 1px solid #24201a;
+  padding: 2rem;
+  border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--c-col);
+  margin: 0.4rem 0 1rem 0;
+}
+
+.step-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--c-gold);
+  font-weight: 600;
+}
+
+.timeline-content p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--c-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Interaction au survol des étapes */
+.timeline-content:hover {
+  border-color: var(--c-gold);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.05);
+}
+
+/* ── BLOC DE SOURCING & CONTINUITÉ EN BAS ── */
+.rite-footer-box {
+  max-width: 940px;
+  margin: 0 auto;
+  background-color: var(--c-surface);
+  border: 1px dashed #332c22;
+  padding: 3rem;
+  border-radius: 6px;
+}
+
+.footer-box-split {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-box-split > div { flex: 1; }
+
+.box-divider {
+  width: 1px;
+  background-color: var(--c-surface2);
+  align-self: stroke;
+}
+
+.rite-footer-box h4 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--c-gold);
+  margin: 0 0 1rem 0;
+}
+
+.rite-footer-box p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.1rem;
+  color: var(--c-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 📱 RESPONSIVE : TOUT PASSE EN MODE FIL VERTICAL UNIQUE SUR MOBILE */
+@media (max-width: 768px) {
+  .rite-section { padding: 4rem 5%; }
+  
+  .timeline-line { left: 20px; } /* Déplace la ligne tout à gauche */
+  
+  .timeline-item {
+    width: 100%; /* Occupe toute la largeur */
+    padding-left: 3.5rem;
+    padding-right: 0;
+    left: 0 !important;
+    text-align: left !important;
+  }
+  
+  .timeline-dot { left: 15px !important; }
+  
+  .footer-box-split {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .box-divider {
+    height: 1px;
+    width: 100%;
   }
 }
